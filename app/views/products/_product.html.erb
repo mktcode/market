@@ -9,4 +9,8 @@
     <%= product.body %>
   </p>
 
+  <p>
+    <strong>Updated at:</strong>
+    <%= time_tag product.updated_at, "data-local" => "time", "data-format" => "%B %d, %Y" %>
+  </p>
 </div>
