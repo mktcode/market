@@ -1,0 +1,10 @@
+<h2>Products</h2>
+<h1><%= @product.title %></h1>
+<p><%= @product.body %></p>
+<a href="<%= products_path %>">
+  Back
+</a>
+<li><%= link_to "Destroy", product_path(@product), data: {
+  turbo_method: :delete,
+  turbo_confirm: "Are you sure?"
+} %></li>
