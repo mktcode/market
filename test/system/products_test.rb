@@ -14,7 +14,8 @@ class ProductsTest < ApplicationSystemTestCase
     visit products_url
     click_on "New product"
 
-    fill_in "Body", with: @product.body
+    # fill_in "Body", with: @product.body
+    fill_in_trix "product_body", with: "Work for us!!!"
     fill_in "Title", with: @product.title
     click_on "Create Product"
 
@@ -26,7 +27,7 @@ class ProductsTest < ApplicationSystemTestCase
     visit product_url(@product)
     click_on "Edit this product", match: :first
 
-    fill_in "Body", with: @product.body
+    fill_in_trix "product_body", with: "Work for us!!!"
     fill_in "Title", with: @product.title
     click_on "Update Product"
 
