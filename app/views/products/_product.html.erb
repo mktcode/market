@@ -1,4 +1,4 @@
-<div id="<%= dom_id product %>">
+<div id="<%= dom_id product %>" class="snap-start relative h-screen w-full max-w-xs mx-auto bg-white rounded-xl shadow-lg my-4">
   <p>
     <strong>Title:</strong>
     <%= product.title %>
@@ -11,5 +11,9 @@
   <p>
     <strong>Updated at:</strong>
     <%= time_tag product.updated_at, "data-local" => "time", "data-format" => "%B %d, %Y" %>
+  </p>
+
+  <p>
+    <%= link_to "Show this product", product %>
   </p>
 </div>
