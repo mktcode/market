@@ -66,7 +66,8 @@ Rails.application.configure do
     password: Rails.application.credentials.dig(:smtp, :password),
     address: "alnilam.uberspace.de",
     port: 465,
-    authentication: :plain
+    authentication: :plain,
+    enable_starttls: true
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
