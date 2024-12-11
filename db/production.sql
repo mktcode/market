@@ -1,0 +1,4 @@
+CREATE_DATABASE market_production;
+CREATE_DATABASE market_production_cache;
+CREATE_DATABASE market_production_queue;
+CREATE_DATABASE market_production_cable;
