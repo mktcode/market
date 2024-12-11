@@ -65,9 +65,9 @@ Rails.application.configure do
     user_name: Rails.application.credentials.dig(:smtp, :user_name),
     password: Rails.application.credentials.dig(:smtp, :password),
     address: "alnilam.uberspace.de",
-    port: 587,
-    authentication: :plain,
-    enable_starttls: true
+    domain: "market.markus-kottlaender.de",
+    port: 465,
+    authentication: :plain
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
