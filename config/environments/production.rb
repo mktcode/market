@@ -67,6 +67,7 @@ Rails.application.configure do
     address: "alnilam.uberspace.de",
     domain: "market.markus-kottlaender.de",
     port: 465,
+    tls: true,
     authentication: :plain
   }
 
