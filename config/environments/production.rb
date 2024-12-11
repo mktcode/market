@@ -58,7 +58,11 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Set host to be used by links generated in mailer templates.
+  config.action_mailer.default_options = { from: "no-reply@market.markus-kottlaender.de" }
   config.action_mailer.default_url_options = { host: "market.markus-kottlaender.de" }
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
 
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
   # config.action_mailer.smtp_settings = {
