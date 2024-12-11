@@ -67,8 +67,9 @@ Rails.application.configure do
     address: "alnilam.uberspace.de",
     domain: "market.markus-kottlaender.de",
     port: 465,
-    tls: true,
-    authentication: :plain
+    ssl: true,
+    authentication: :plain,
+    enable_starttls_auto: false
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
