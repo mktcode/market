@@ -65,7 +65,7 @@ Rails.application.configure do
     user_name: Rails.application.credentials.dig(:smtp, :user_name),
     password: Rails.application.credentials.dig(:smtp, :password),
     address: "alnilam.uberspace.de",
-    domain: "market.markus-kottlaender.de",
+    domain: "markus-kottlaender.de",
     port: 465,
     ssl: true,
     authentication: :plain,
