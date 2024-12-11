@@ -7,7 +7,7 @@ image: mktcode/market
 # Deploy to these servers.
 servers:
   web:
-    - 37.27.31.191
+    - 37.27.218.105
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -96,7 +96,7 @@ builder:
 accessories:
   db:
     image: mysql:8.0
-    host: 37.27.31.191
+    host: 37.27.218.105
     # Change to 3306 to expose port to the world instead of just local network.
     port: "127.0.0.1:3306:3306"
     env:
