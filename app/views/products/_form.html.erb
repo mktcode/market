@@ -17,6 +17,11 @@
   </div>
 
   <div class="mb-4">
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="mb-4">
     <%= form.label :images, style: "display: block" %>
     <% @product.images.each do |image| %>
       <%= form.hidden_field :images, multiple: true, value: image.signed_id %>
