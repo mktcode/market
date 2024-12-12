@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "home/index"
   resource :session
   resources :passwords, param: :token
   resources :products
@@ -13,5 +14,5 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  root "products#index"
+  root "home#index"
 end
