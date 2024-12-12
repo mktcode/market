@@ -56,7 +56,7 @@ Rails.application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_options = { from: "noreply@markus-kottlaender.de" }
+  config.action_mailer.default_options = { from: "noreply@market.markus-kottlaender.de" }
   # Set host to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = { host: "market.markus-kottlaender.de" }
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
@@ -64,7 +64,7 @@ Rails.application.configure do
     user_name: Rails.application.credentials.dig(:smtp, :user_name),
     password: Rails.application.credentials.dig(:smtp, :password),
     address: "alnilam.uberspace.de",
-    domain: "alnilam.uberspace.de",
+    domain: "market.markus-kottlaender.de",
     port: 587,
     authentication: :plain,
     enable_starttls: true,
