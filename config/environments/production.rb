@@ -66,9 +66,12 @@ Rails.application.configure do
     password: Rails.application.credentials.dig(:smtp, :password),
     domain: "market.markus-kottlaender.de",
     address: "alnilam.uberspace.de",
-    port: 587,
+    port: 465,
     authentication: :plain,
-    enable_starttls: true,
+    enable_starttls: false,
+    enable_starttls_auto: false,
+    ssl: true,
+    tls: true,
     open_timeout: 5,
     read_timeout: 5
   }
