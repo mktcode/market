@@ -9,6 +9,9 @@
   <div id="products" class="flex-1 snap-y snap-mandatory overflow-y-auto">
     <% @products.each do |product| %>
       <%= render product %>
+      <p>
+        <%= link_to "Show this product", product %>
+      </p>
     <% end %>
   </div>
 </div>
