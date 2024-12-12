@@ -11,14 +11,23 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
-  <div>
+  <div class="mb-4">
+    <%= form.label :images, style: "display: block" %>
+    <% @product.images.each do |image| %>
+      <%= form.hidden_field :images, multiple: true, value: image.signed_id %>
+    <% end %>
+
+    <%= form.file_field :images, multiple: true %>
+  </div>
+
+  <div class="mb-4">
     <%= form.label :body, style: "display: block" %>
-    <%= form.rich_textarea :body %>
+    <%= form.rich_textarea :body, class: "w-full h-64" %>
   </div>
 
   <div>

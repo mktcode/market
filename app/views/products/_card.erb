@@ -1,0 +1,8 @@
+<div class="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition">
+  <img src="<%= url_for(product.images[0]) %>" alt="<%= product.title %>" class="w-full h-40 object-cover rounded-md">
+  <h3 class="text-lg font-semibold mt-4"><%= product.title %></h3>
+  <div class="mt-4 flex justify-between items-center">
+    <span class="text-xl font-bold text-gray-800"><%= number_to_currency(10) %></span>
+    <%= link_to 'Buy', product_path(product), class: 'bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition' %>
+  </div>
+</div>
