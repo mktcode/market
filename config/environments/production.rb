@@ -58,12 +58,9 @@ Rails.application.configure do
     user_name: Rails.application.credentials.dig(:smtp, :user_name),
     password: Rails.application.credentials.dig(:smtp, :password),
     address: "alnilam.uberspace.de",
-    port: 465,
+    port: 587,
     authentication: :plain,
-    enable_starttls: false,
-    enable_starttls_auto: false,
-    ssl: true,
-    tls: true,
+    enable_starttls: true,
     open_timeout: 5,
     read_timeout: 5
   }
