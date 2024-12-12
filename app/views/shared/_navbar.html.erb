@@ -1,3 +1,4 @@
+<!-- app/views/shared/_navbar.html.erb -->
 <nav class="bg-white shadow">
   <div class="container mx-auto flex justify-between items-center py-4 px-6">
     <!-- Logo -->
@@ -8,29 +9,41 @@
       YouMarket.com
     </a>
 
-    <!-- Mobile Menu Button -->
-    <input type="checkbox" id="menu-toggle" class="hidden peer">
-    <label for="menu-toggle" class="block md:hidden text-gray-800 focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    <!-- Mobile Menu Toggle -->
+    <input type="checkbox" id="navbar-toggle" class="hidden peer" />
+    <label for="navbar-toggle" class="md:hidden cursor-pointer z-50">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </label>
 
-    <!-- Navigation Links -->
-    <div class="hidden peer-checked:flex md:flex flex-col md:flex-row md:space-x-6 items-center">
-      <ul class="flex flex-col md:flex-row md:space-x-6">
+    <!-- Navigation Container -->
+    <div class="
+      fixed inset-0 bg-white/90 z-40 
+      md:static md:bg-transparent 
+      transform translate-x-full 
+      md:translate-x-0 
+      peer-checked:translate-x-0 
+      transition-transform duration-300 ease-in-out
+      flex flex-col md:flex-row 
+      justify-center md:justify-between 
+      items-center 
+      space-y-6 md:space-y-0 md:space-x-6
+    ">
+      <ul class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
         <li>
-          <%= link_to 'Home', root_path, class: 'text-gray-800 hover:text-gray-600 font-medium' %>
+          <%= link_to 'Home', root_path, class: 'block text-gray-800 hover:text-gray-600 font-medium' %>
         </li>
         <li>
-          <%= link_to 'My Shop', products_path, class: 'text-gray-800 hover:text-gray-600 font-medium' %>
+          <%= link_to 'My Shop', products_path, class: 'block text-gray-800 hover:text-gray-600 font-medium' %>
         </li>
         <li>
-          <%= link_to 'New Product', new_product_path, class: 'text-gray-800 hover:text-gray-600 font-medium' %>
+          <%= link_to 'New Product', new_product_path, class: 'block text-gray-800 hover:text-gray-600 font-medium' %>
         </li>
       </ul>
+
       <% if authenticated? %>
-        <%= button_to "Sign out", session_path, method: :delete, class: "bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300" %>
+        <%= button_to "Sign out", session_path, method: :delete, class: "w-auto bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300" %>
       <% end %>
     </div>
   </div>
