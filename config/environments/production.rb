@@ -58,18 +58,19 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Set host to be used by links generated in mailer templates.
-  config.action_mailer.default_options = { from: "no-reply@markus-kottlaender.de" }
+  config.action_mailer.default_options = { from: "noreply@market.markus-kottlaender.de" }
   config.action_mailer.default_url_options = { host: "market.markus-kottlaender.de" }
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
   config.action_mailer.smtp_settings = {
     user_name: Rails.application.credentials.dig(:smtp, :user_name),
     password: Rails.application.credentials.dig(:smtp, :password),
     address: "alnilam.uberspace.de",
-    domain: "markus-kottlaender.de",
-    port: 465,
-    ssl: true,
+    domain: "market.markus-kottlaender.de",
+    port: 587,
     authentication: :plain,
-    enable_starttls_auto: false
+    enable_starttls: true,
+    open_timeout: 5,
+    read_timeout: 5
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
