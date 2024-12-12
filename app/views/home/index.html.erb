@@ -1,12 +1,14 @@
 <div>
-  <h1 class="font-bold text-4xl">Market</h1>
-  <p>Market is a simple e-commerce application built with Ruby on Rails and Tailwind CSS.</p>
-  <%= link_to "Products", products_path, class: "text-blue-500" %>
-  <ul>
+  <h1 class="text-3xl font-semibold mb-3">
+    Explore our products
+  </h1>
+  <p class="mb-6 text-gray-600 text-lg">
+    Market is a simple e-commerce application built with Ruby on Rails and Tailwind CSS.
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
     <% @products.each do |product| %>
-      <li>
-        <%= link_to product.title, product %>
-      </li>
+      <%= render partial: 'products/card', locals: { product: product } %>
     <% end %>
-  </ul>
+  </div>
 </div>
