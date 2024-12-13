@@ -34,19 +34,13 @@ resource "hcloud_firewall" "market-app" {
     direction = "in"
     protocol  = "tcp"
     port      = "80"
-    source_ips = [
-      "0.0.0.0/0",
-      "::/0"
-    ]
+    source_ips = [hcloud_load_balancer.market-app.ipv4]
   }
   rule {
     direction = "in"
     protocol  = "tcp"
     port      = "443"
-    source_ips = [
-      "0.0.0.0/0",
-      "::/0"
-    ]
+    source_ips = [hcloud_load_balancer.market-app.ipv4]
   }
 }
 
@@ -120,18 +114,6 @@ resource "hcloud_server" "market-db" {
   firewall_ids = [ hcloud_firewall.market-db.id ]
 }
 
-resource "hcloud_rdns" "market-app-1" {
-  server_id = hcloud_server.market-app-1.id
-  ip_address = hcloud_server.market-app-1.ipv4_address
-  dns_ptr = "market.markus-kottlaender.de"
-}
-
-resource "hcloud_rdns" "market-app-2" {
-  server_id = hcloud_server.market-app-2.id
-  ip_address = hcloud_server.market-app-2.ipv4_address
-  dns_ptr = "market.markus-kottlaender.de"
-}
-
 output "market-app-1_ip" {
   value = hcloud_server.market-app-1.ipv4_address
 }
@@ -162,13 +144,18 @@ resource "hcloud_load_balancer_target" "market-app-2" {
   server_id        = hcloud_server.market-app-2.id
 }
 
+resource "hcloud_managed_certificate" "market-app" {
+  name = "market-app"
+  domain_names = ["market.markus-kottlaender.de"]
+}
+
 resource "hcloud_load_balancer_service" "market-app-health" {
   load_balancer_id = hcloud_load_balancer.market-app.id
-  protocol         = "http"
+  protocol         = "https"
 
   http {
-    sticky_sessions = true
-    cookie_name     = "MARKET_APP_STICKY"
+    redirect_http = true
+    certificates = [hcloud_managed_certificate.market-app.id]
   }
 
   health_check {
