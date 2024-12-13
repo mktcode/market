@@ -7,7 +7,17 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <h1 class="font-bold text-4xl">Sign in</h1>
+  <div class="bg-blue-50 border-l-4 border-blue-400 text-blue-800 p-4 mt-5 flex items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-blue-200 inline-block mr-4">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+    </svg>
+
+    <p>
+      YouMarket is currently in beta and only invited users can sell their products. Contact as at <a href="mailto:beta@youmarket.com" class="text-blue-600 underline">beta@youmarket.com</a> to request an invite.
+    </p>
+  </div>
+
+  <h1 class="font-bold text-4xl mt-10">Sign in</h1>
 
   <%= form_with url: session_url, class: "contents" do |form| %>
     <div class="my-5">
@@ -30,4 +40,30 @@
       </div>
     </div>
   <% end %>
+
+  <div class="prose max-w-full my-24">
+    <h2>
+      What is YouMarket?
+    </h2>
+
+    <p>
+      YouMarket is a platform that allows you to sell your products online. There are plenty of other platforms that allow you to do this, and there's nothing particularly special about YouMarket. We try to design an intuitive and unobtrusive user experience for both sellers and buyers, focused on handcrafted and sustainable products.
+    </p>
+
+    <h2>
+      What are the fees?
+    </h2>
+
+    <p>
+      You CAN sell products absolutley for free, IF you coordinate everything with the buyer yourself and don't use the built-in payment processor, which is Stripe. We don't force you or buyers to go through the online checkout. But if you want to then Stripe takes a fee of 2.9% + 30¢ per transaction and we take another 1% on top of that.
+    </p>
+
+    <h2>
+      Will people find my products on YouMarket?
+    </h2>
+
+    <p>
+      Well, search engine optimization is a difficult thing to master. We're working on it but it also just takes time. You can help by sharing your products on social media and telling your friends about YouMarket. We want to grow and evolve organically and don't do any paid advertising.
+    </p>
+  </div>
 </div>
