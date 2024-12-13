@@ -65,3 +65,4 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 3.0"
+gem "aws-sdk-s3", require: false
