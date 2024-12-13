@@ -2,12 +2,13 @@ service: market
 image: mktcode/market
 servers:
   web:
-    - SERVER_MARKET_APP_1_IP
-    - SERVER_MARKET_APP_2_IP
+    - <%= `bin/terraform output -raw market-app-1_ip` %>
+    - <%= `bin/terraform output -raw market-app-2_ip` %>
 registry:
   username: mktcode
   password:
     - KAMAL_REGISTRY_PASSWORD
+proxy: false
 env:
   secret:
     - RAILS_MASTER_KEY
@@ -16,7 +17,7 @@ env:
     SOLID_QUEUE_IN_PUMA: true
     JOB_CONCURRENCY: 3
     WEB_CONCURRENCY: 2
-    DB_HOST: SERVER_MARKET_DB_IP
+    DB_HOST: <%= `bin/terraform output -raw market-db_ip` %>
     # RAILS_LOG_LEVEL: debug
 aliases:
   console: app exec --interactive --reuse "bin/rails console"
@@ -31,7 +32,7 @@ builder:
 accessories:
   db:
     image: mysql:8.0
-    host: SERVER_MARKET_DB_IP
+    host: <%= `bin/terraform output -raw market-db_ip` %>
     port: 3306
     env:
       clear:

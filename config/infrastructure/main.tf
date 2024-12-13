@@ -107,7 +107,7 @@ resource "hcloud_server" "market-app-2" {
 resource "hcloud_server" "market-db" {
   name = "market-db"
   image = "ubuntu-24.04"
-  server_type = "cax11"
+  server_type = "cx22"
   public_net {
     ipv4_enabled = true
     ipv6_enabled = true
@@ -154,4 +154,33 @@ resource "hcloud_load_balancer_target" "market-app-1" {
   type             = "server"
   load_balancer_id = hcloud_load_balancer.market-app.id
   server_id        = hcloud_server.market-app-1.id
+}
+
+resource "hcloud_load_balancer_target" "market-app-2" {
+  type             = "server"
+  load_balancer_id = hcloud_load_balancer.market-app.id
+  server_id        = hcloud_server.market-app-2.id
+}
+
+resource "hcloud_load_balancer_service" "market-app-health" {
+  load_balancer_id = hcloud_load_balancer.market-app.id
+  protocol         = "http"
+
+  http {
+    sticky_sessions = true
+    cookie_name     = "MARKET_APP_STICKY"
+  }
+
+  health_check {
+    protocol = "http"
+    port     = 80
+    interval = 10
+    timeout  = 5
+
+    http {
+      path         = "/up"
+      tls          = false
+      status_codes = ["200"]
+    }
+  }
 }
