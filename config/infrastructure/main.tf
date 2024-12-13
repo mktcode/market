@@ -161,7 +161,7 @@ resource "hcloud_load_balancer_service" "market-app-health" {
   health_check {
     protocol = "http"
     port     = 80
-    interval = 10
+    interval = 30
     timeout  = 5
 
     http {
