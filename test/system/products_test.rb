@@ -9,13 +9,12 @@ class ProductsTest < ApplicationSystemTestCase
   test "visiting the index" do
     visit products_url
     login_as @user
-    assert_selector "h1", text: "Products"
+    assert_selector "h1", text: "My Shop"
   end
 
   test "should create product" do
-    visit products_url
+    visit new_product_url
     login_as @user
-    click_on "New product"
 
     fill_in_trix "product_body", with: "Work for us!!!"
     fill_in "Title", with: @product.title
