@@ -8,6 +8,7 @@ image: mktcode/market
 servers:
   web:
     - market.markus-kottlaender.de
+    - SERVER_MARKET_APP_1_IP
   # job:
   #   hosts:
   #     - 192.168.0.1
