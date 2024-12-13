@@ -3,4 +3,4 @@ package_update: true
 package_upgrade: true
 
 runcmd:
-  - echo "Hello world! I was provisioned by terraform with cloud-init."
+  - echo "Hello app! I was provisioned by terraform with cloud-init."

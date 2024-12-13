@@ -19,10 +19,63 @@ provider "hcloud" {
   token = var.hcloud_token
 }
 
+resource "hcloud_firewall" "market-app" {
+  name = "market-app"
+  rule {
+    direction = "in"
+    protocol  = "tcp"
+    port      = "22"
+    source_ips = [
+      "0.0.0.0/0",
+      "::/0"
+    ]
+  }
+  rule {
+    direction = "in"
+    protocol  = "tcp"
+    port      = "80"
+    source_ips = [
+      "0.0.0.0/0",
+      "::/0"
+    ]
+  }
+  rule {
+    direction = "in"
+    protocol  = "tcp"
+    port      = "443"
+    source_ips = [
+      "0.0.0.0/0",
+      "::/0"
+    ]
+  }
+}
+
+resource "hcloud_firewall" "market-db" {
+  name = "market-db"
+  rule {
+    direction = "in"
+    protocol  = "tcp"
+    port      = "22"
+    source_ips = [
+      "0.0.0.0/0",
+      "::/0"
+    ]
+  }
+  rule {
+    direction = "in"
+    protocol  = "tcp"
+    port      = "3306"
+    source_ips = [
+      hcloud_server.market-app-1.ipv4_address,
+      hcloud_server.market-app-2.ipv4_address
+    ]
+  }
+}
+
 resource "hcloud_server" "market-app-1" {
   name = "market-app-1"
   image = "ubuntu-24.04"
-  server_type = "cax11"
+  server_type = "cx22"
   public_net {
     ipv4_enabled = true
     ipv6_enabled = true
@@ -32,6 +85,39 @@ resource "hcloud_server" "market-app-1" {
     data.hcloud_ssh_key.default.id
   ]
   user_data = file("${path.module}/market-app.cloud-init.yml")
+  firewall_ids = [ hcloud_firewall.market-app.id ]
+}
+
+resource "hcloud_server" "market-app-2" {
+  name = "market-app-2"
+  image = "ubuntu-24.04"
+  server_type = "cx22"
+  public_net {
+    ipv4_enabled = true
+    ipv6_enabled = true
+  }
+  location = "nbg1"
+  ssh_keys = [
+    data.hcloud_ssh_key.default.id
+  ]
+  user_data = file("${path.module}/market-app.cloud-init.yml")
+  firewall_ids = [ hcloud_firewall.market-app.id ]
+}
+
+resource "hcloud_server" "market-db" {
+  name = "market-db"
+  image = "ubuntu-24.04"
+  server_type = "cax11"
+  public_net {
+    ipv4_enabled = true
+    ipv6_enabled = true
+  }
+  location = "nbg1"
+  ssh_keys = [
+    data.hcloud_ssh_key.default.id
+  ]
+  user_data = file("${path.module}/market-db.cloud-init.yml")
+  firewall_ids = [ hcloud_firewall.market-db.id ]
 }
 
 resource "hcloud_rdns" "market-app-1" {
@@ -40,6 +126,32 @@ resource "hcloud_rdns" "market-app-1" {
   dns_ptr = "market.markus-kottlaender.de"
 }
 
+resource "hcloud_rdns" "market-app-2" {
+  server_id = hcloud_server.market-app-2.id
+  ip_address = hcloud_server.market-app-2.ipv4_address
+  dns_ptr = "market.markus-kottlaender.de"
+}
+
 output "market-app-1_ip" {
   value = hcloud_server.market-app-1.ipv4_address
+}
+
+output "market-app-2_ip" {
+  value = hcloud_server.market-app-2.ipv4_address
+}
+
+output "market-db_ip" {
+  value = hcloud_server.market-db.ipv4_address
+}
+
+resource "hcloud_load_balancer" "market-app" {
+  name               = "market-app"
+  load_balancer_type = "lb11"
+  location           = "nbg1"
+}
+
+resource "hcloud_load_balancer_target" "market-app-1" {
+  type             = "server"
+  load_balancer_id = hcloud_load_balancer.market-app.id
+  server_id        = hcloud_server.market-app-1.id
 }
