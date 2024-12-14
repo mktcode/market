@@ -7,7 +7,14 @@
   .button,
   input[type="button"],
   input[type="submit"] {
-    @apply cursor-pointer px-4 py-2 bg-blue-500 text-white font-semibold rounded shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+    @apply cursor-pointer px-4 py-2 bg-blue-500 text-white font-semibold rounded shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center justify-center;
+  }
+
+  button.secondary,
+  .button.secondary,
+  input[type="button"].secondary,
+  input[type="submit"].secondary {
+    @apply bg-gray-300/20 text-gray-800 shadow-none hover:bg-gray-300 focus:ring-0;
   }
 
   input[type="text"],
