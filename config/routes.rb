@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "home/index"
+  get "map/index"
   resource :session
   resources :passwords, param: :token
   resources :products
