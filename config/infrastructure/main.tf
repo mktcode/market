@@ -66,6 +66,37 @@ resource "hcloud_firewall" "market-db" {
   }
 }
 
+resource "hcloud_firewall" "monitor" {
+  name = "monitor"
+  rule {
+    direction = "in"
+    protocol  = "tcp"
+    port      = "22"
+    source_ips = [
+      "0.0.0.0/0",
+      "::/0"
+    ]
+  }
+  rule {
+    direction = "in"
+    protocol  = "tcp"
+    port      = "80"
+    source_ips = [
+      "0.0.0.0/0",
+      "::/0"
+    ]
+  }
+  rule {
+    direction = "in"
+    protocol  = "tcp"
+    port      = "443"
+    source_ips = [
+      "0.0.0.0/0",
+      "::/0"
+    ]
+  }
+}
+
 resource "hcloud_server" "market-app-1" {
   name = "market-app-1"
   image = "ubuntu-24.04"
@@ -112,6 +143,21 @@ resource "hcloud_server" "market-db" {
   ]
   user_data = file("${path.module}/market-db.cloud-init.yml")
   firewall_ids = [ hcloud_firewall.market-db.id ]
+}
+
+resource "hcloud_server" "monitor" {
+  name = "monitor"
+  image = "prometheus-grafana"
+  server_type = "cax11"
+  public_net {
+    ipv4_enabled = true
+    ipv6_enabled = true
+  }
+  location = "hel1"
+  ssh_keys = [
+    data.hcloud_ssh_key.default.id
+  ]
+  firewall_ids = [ hcloud_firewall.monitor.id ]
 }
 
 output "market-app-1_ip" {
