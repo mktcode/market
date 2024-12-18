@@ -1,0 +1,9 @@
+one_image_attachment:
+  name: images
+  record: one (Product)
+  blob: one_image_blob
+
+two_image_attachment:
+  name: images
+  record: two (Product)
+  blob: two_image_blob
