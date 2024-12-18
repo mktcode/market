@@ -20,6 +20,43 @@
     <% end %>
   </div>
 
+
+  <section class="grid md:grid-cols-2 gap-12 mt-24">
+    <div>
+      <h1 class="text-5xl font-semibold mb-8 satisfy-regular">
+        In deiner Nähe
+      </h1>
+      <div class="text-gray-700 leading-relaxed space-y-4">
+        <p>
+          Nachhaltigkeit beginnt direkt vor deiner Haustür. Mit unserer interaktiven Karte kannst du entdecken, welche nachhaltigen Produkte und Dienstleistungen es in deiner Umgebung gibt. Egal, ob du nach einem Bioladen, einem Reparaturservice, handgefertigten Produkten oder Secondhand-Angeboten suchst – hier findest du Inspiration und Unterstützung für einen bewussten Lebensstil. Jeder Marker auf der Karte führt dich zu Menschen und Unternehmen, die mit Leidenschaft nachhaltige Lösungen anbieten.
+        </p>
+        <p>
+          Klick auf die Marker, um mehr über die Anbieter zu erfahren und direkt mit ihnen in Kontakt zu treten. So kannst du gezielt lokale Initiativen unterstützen und die Umweltbelastung durch lange Lieferketten vermeiden.
+        </p>
+        <p>
+          Du bietest selbst nachhaltige Produkte oder Dienstleistungen an? Dann werde Teil unserer Community und trage deine Angebote kostenlos ein. Gemeinsam stärken wir regionale Netzwerke und fördern eine nachhaltigere Wirtschaft – direkt in deiner Nähe.
+        </p>
+      </div>
+    </div>
+    <div>
+      <div class="flex justify-start items-center mb-4 gap-4">
+        <div>
+          <input type="checkbox" id="food" name="food" value="food" checked>
+          <label for="food">Lebensmittel</label>
+        </div>
+        <div>
+          <input type="checkbox" id="repair" name="repair" value="repair" checked>
+          <label for="repair">Reparatur</label>
+        </div>
+        <div>
+          <input type="checkbox" id="clothing" name="clothing" value="clothing" checked>
+          <label for="clothing">Kleidung</label>
+        </div>
+      </div>
+      <div id="map" class="w-full aspect-video rounded-xl shadow-lg"></div>
+    </div>
+  </section>
+
   <section class="mt-24">
     <h2 class="text-2xl font-semibold mb-3 flex items-center satisfy-regular">
       <svg xmlns="http://www.w3.org/2000/svg" class="inline-block text-green-600 size-10 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
