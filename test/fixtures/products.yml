@@ -1,9 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  body: MyText
+  title: Schürtze
+  description: Selbstgemachte Schürtze aus 100% Baumwolle und mit einer Länge von 90cm.
+  body: Selbstgemachte Schürtze aus 100% Baumwolle und mit einer Länge von 90cm.
+  user: one
 
 two:
-  title: MyString
-  body: MyText
+  title: Ofenhandschuhe
+  description: Selbstgemachte Ofenhandschuhe aus 100% Baumwolle und mit einer Länge von 30cm.
+  body: Selbstgemachte Ofenhandschuhe aus 100% Baumwolle und mit einer Länge von 30cm.
+  user: two

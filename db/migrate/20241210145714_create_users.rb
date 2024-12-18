@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[8.0]
 
       t.timestamps
     end
+    add_reference :products, :user, foreign_key: true
     add_index :users, :email_address, unique: true
   end
 end

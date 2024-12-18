@@ -54,7 +54,9 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_12_174951) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.text "description"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -77,5 +79,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_12_174951) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "products", "users"
   add_foreign_key "sessions", "users"
 end
