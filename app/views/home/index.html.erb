@@ -1,14 +1,68 @@
 <div>
-  <h1 class="text-3xl font-semibold mb-3 mt-10">
-    Fresh Creations from Our Community
+  <div class="relative w-full h-[500px] bg-cover bg-center rounded-xl" style="background-image: url('<%= asset_path("header.webp") %>');">
+    <div class="absolute inset-0 bg-black bg-opacity-30 flex flex-col items-center justify-center rounded-xl">
+      <div class="text-center text-white p-12 satisfy-regular drop-shadow-2xl">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Emma Herbst</h1>
+        <p class="text-xl md:text-4xl">Stabile Werte und kompromisslose Nachhaltigkeit!</p>
+      </div>
+      <button class="mt-6 text-xl px-6 py-3 bg-black/20 border-white border-2">
+        Jetzt mitmachen!
+      </button>
+    </div>
+  </div>
+  <h1 class="text-5xl font-semibold mb-8 mt-24 satisfy-regular">
+    Gerade fertig geworden
   </h1>
-  <p class="mb-10 text-gray-600 text-lg">
-    A marketplace for handcrafted and sustainable products, designed to make selling simple and shopping meaningful.
-  </p>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
     <% @products.each do |product| %>
       <%= render partial: 'products/card', locals: { product: product } %>
     <% end %>
   </div>
+
+  <section class="mt-24">
+    <h2 class="text-2xl font-semibold mb-3 flex items-center satisfy-regular">
+      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block text-green-600 size-10 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+      Unsere Mission
+    </h2>
+    <p class="text-gray-700 leading-relaxed columns-1 md:columns-2 gap-12">
+      Uns liegt das Thema Nachhaltigkeit sehr am Herzen und wir sind enttäuscht von der Wegwerfgesellschaft und der Gedankenlosigkeit derer, die eigentlich das Potenzial hätten, etwas zu bewegen. Nachhaltigkeit verkommt zu einem Verkaufsargument und wird viel zu oft nur oberflächlich betrachtet, sowohl von Produzenten als auch von Konsumenten.
+      Ein gutes Gewissen reicht uns nicht, aber uns ist auch klar, wie schwer es ist, die Zusammenhänge wirklich zu Ende zu denken. Selbst auf Plattformen, die sich Nachhaltigkeit auf die Fahnen schreiben, müsste man eigentlich jedes Produkt noch einmal genauer unter die Lupe nehmen. Wir wollen einen kompromisslosen Marktplatz schaffen, für Menschen, die sich wirklich Gedanken machen wollen, aber vielleicht nicht die Zeit oder das Geld haben. Wir wollen nicht reich werden. Wir wollen sinnvolle Produkte zugänglicher machen. 
+    </p>
+    <div class="mt-8 space-y-2">
+      <div class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="text-green-500 mr-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>100% kostenlos für Käufer und Verkäufer</span>
+      </div>
+      <div class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="text-green-500 mr-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <span>Organisches Wachstum, keine bezahlte Werbung</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="md:col-span-2 mt-12">
+    <h2 class="text-2xl font-semibold mb-4 satisfy-regular">So funktioniert's</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div>
+        <h3 class="font-bold mb-2">Für Verkäufer</h3>
+        <p class="text-gray-700">Stelle deine Produkte kostenlos ein und erreiche Menschen, denen Nachhaltigkeit wichtig ist.</p>
+      </div>
+      <div>
+        <h3 class="font-bold mb-2">Für Käufer</h3>
+        <p class="text-gray-700">Finde geprüfte, nachhaltige Produkte ohne versteckte Kosten oder Provisionen.</p>
+      </div>
+      <div>
+        <h3 class="font-bold mb-2">Community-Wachstum</h3>
+        <p class="text-gray-700">Hilf uns beim Wachstum, indem du uns in sozialen Medien teilst und weiterempfiehlst.</p>
+      </div>
+    </div>
+  </section>
 </div>

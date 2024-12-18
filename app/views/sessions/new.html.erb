@@ -7,63 +7,66 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <div class="bg-blue-50 border-l-4 border-blue-400 text-blue-800 p-4 mt-5 flex items-center">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-blue-200 inline-block mr-4">
+  <div class="bg-green-50 border-l-4 border-green-600 text-green-800 p-4 mt-5 flex items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12 text-green-600 inline-block mr-4">
       <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
     </svg>
 
     <p>
-      YouMarket is currently in beta and only invited users can sell their products. Contact as at <a href="mailto:beta@youmarket.com" class="text-blue-600 underline">beta@youmarket.com</a> to request an invite.
+      Emma Herbst befindet sich derzeit in der Test-Phase und nur eingeladene Benutzer können ihre Produkte verkaufen. Kontaktieren Sie uns unter <a href="mailto:kontakt@emmaherbst.de" class="text-green-600 underline">kontakt@emmaherbst.de</a>, um eine Einladung anzufordern.
     </p>
   </div>
 
-  <h1 class="font-bold text-4xl mt-10">Sign in</h1>
+  <h1 class="font-bold text-4xl mt-10">Anmeldung</h1>
 
   <%= form_with url: session_url, class: "contents" do |form| %>
     <div class="my-5">
-      <%= form.label :email_address, "Email", class: "block text-sm font-medium text-gray-700" %>
-      <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address], class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+      <%= form.label :email_address, "E-Mail", class: "block text-sm font-medium text-gray-700" %>
+      <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "E-Mail-Adresse eingeben", value: params[:email_address], class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
     </div>
 
     <div class="my-5">
-      <%= form.label :password, "Password", class: "block text-sm font-medium text-gray-700" %>
-      <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+      <%= form.label :password, "Passwort", class: "block text-sm font-medium text-gray-700" %>
+      <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Passwort eingeben.", maxlength: 72, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
     </div>
 
     <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
       <div class="inline">
-        <%= form.submit "Sign in", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+        <%= form.submit "Anmelden", class: "rounded-lg py-3 px-5 bg-green-600 text-white inline-block font-medium cursor-pointer" %>
       </div>
 
       <div class="mt-4 text-sm text-gray-500 sm:mt-0">
-        <%= link_to "Forgot password?", new_password_path, class: "text-gray-700 underline" %>
+        <%= link_to "Passwort vergessen?", new_password_path, class: "text-gray-700 underline" %>
       </div>
     </div>
   <% end %>
 
   <div class="prose max-w-full my-24">
     <h2>
-      What is YouMarket?
+      Worum geht es?
     </h2>
 
     <p>
-      YouMarket is a platform that allows you to sell your products online. There are plenty of other platforms that allow you to do this, and there's nothing particularly special about YouMarket. We try to design an intuitive and unobtrusive user experience for both sellers and buyers, focused on handcrafted and sustainable products.
+      Uns liegt das Thema Nachhaltigkeit sehr am Herzen und wir sind enttäuscht von der Wegwerfgesellschaft und der Gedankenlosigkeit derer, die eigentlich das Potenzial hätten, etwas zu bewegen. Nachhaltigkeit verkommt zu einem Verkaufsargument und wird viel zu oft nur oberflächlich betrachtet, sowohl von Produzenten als auch von Konsumenten.
+    </p>
+    <p>
+      Ein gutes Gewissen reicht uns nicht, aber uns ist auch klar, wie schwer es ist, die Zusammenhänge wirklich zu Ende zu denken. Selbst auf Plattformen, die sich Nachhaltigkeit auf die Fahnen schreiben, müsste man eigentlich jedes Produkt noch einmal genauer unter die Lupe nehmen. Wir wollen einen kompromisslosen Marktplatz schaffen, für Menschen, die sich wirklich Gedanken machen wollen, aber vielleicht nicht die Zeit oder das Geld haben. Wir wollen nicht reich werden. Wir wollen sinnvolle Produkte zugänglicher machen.
     </p>
 
     <h2>
-      What are the fees?
+      Kosten?
     </h2>
 
     <p>
-      You CAN sell products absolutley for free, IF you coordinate everything with the buyer yourself and don't use the built-in payment processor, which is Stripe. We don't force you or buyers to go through the online checkout. But if you want to, then Stripe takes a fee of 1,5 % + 0,25 € per transaction and we take another 1,5 %. So in total you pay 3 % + 0,25 € per sell. No monthly fees.
+      Du kannst unseren Marktplatz sowohl als Käufer als auch als Verkäufer zu 100% kostenlos nutzen. Wir wollen keine Provisionen oder monatlichen Gebühren erheben und alle Funktionen stehen allen zur Verfügung. Wir sind ein kleines Team und arbeiten ehrenamtlich. Der Betrieb einer solchen Plattform ist natürlich mit Kosten verbunden, aber die können wir noch selbst tragen. Vielleicht müssen wir irgendwann etwas prominenter um Spenden bitten oder uns etwas anderes einfallen lassen, wenn hier mehr los ist und die technischen Anforderungen wachsen. Das wird aber immer nur der Kostendeckung dienen und transparent kommuniziert.
     </p>
 
     <h2>
-      Will people find my products on YouMarket?
+      Wie finden Käufer meine Produkte?
     </h2>
 
     <p>
-      Well, search engine optimization is a difficult thing to master. We're working on it but it also just takes time. You can help by sharing your products on social media and telling your friends about YouMarket. We want to grow and evolve organically and don't do any paid advertising.
+      Nun, Suchmaschinenoptimierung ist eine schwierige Sache. Wir arbeiten daran, aber es braucht auch einfach Zeit. Du kannst uns helfen, indem du deine Produkte in den sozialen Medien teilst und deinen Freunden von uns erzählst. Wir wollen organisch wachsen und machen keine bezahlte Werbung.
     </p>
   </div>
 </div>
