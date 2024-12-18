@@ -10,4 +10,16 @@ two:
   title: Ofenhandschuhe
   description: Selbstgemachte Ofenhandschuhe aus 100% Baumwolle und mit einer Länge von 30cm.
   body: Selbstgemachte Ofenhandschuhe aus 100% Baumwolle und mit einer Länge von 30cm.
+  user: one
+
+three:
+  title: Topflappen
+  description: Selbstgemachte Topflappen aus 100% Baumwolle und mit einer Länge von 20cm.
+  body: Selbstgemachte Topflappen aus 100% Baumwolle und mit einer Länge von 20cm.
+  user: two
+
+four:
+  title: Tragetasche
+  description: Selbstgemachte Tragetasche aus 100% Baumwolle und mit einer Länge von 40cm.
+  body: Selbstgemachte Tragetasche aus 100% Baumwolle und mit einer Länge von 40cm
   user: two

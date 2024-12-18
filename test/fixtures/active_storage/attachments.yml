@@ -6,4 +6,14 @@ one_image_attachment:
 two_image_attachment:
   name: images
   record: two (Product)
-  blob: two_image_blob
+  blob: one_image_blob
+
+three_image_attachment:
+  name: images
+  record: three (Product)
+  blob: one_image_blob
+
+four_image_attachment:
+  name: images
+  record: four (Product)
+  blob: one_image_blob
