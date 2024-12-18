@@ -7,9 +7,3 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
-# Create a default admin user
-User.find_or_create_by!(email_address: "kontakt@markus-kottlaender.de") do |user|
-  user.password = "1234"
-  user.admin = true
-end
