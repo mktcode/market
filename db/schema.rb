@@ -54,7 +54,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_12_174951) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.text "description"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
