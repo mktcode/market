@@ -9,9 +9,17 @@
  * Consider organizing styles into separate files for maintainability.
  */
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
 .satisfy-regular {
   font-family: "Satisfy", serif;
   font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
   font-style: normal;
 }
