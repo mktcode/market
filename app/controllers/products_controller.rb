@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    @product.materials.build
   end
 
   # GET /products/1/edit
@@ -66,6 +67,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.expect(product: [ :title, :description, :body, images: [] ])
+      params.expect(product: [ :title, :description, :body, images: [], materials_attributes: [ [ :name, :cost, :secondhand, :_destroy, :id ] ] ])
     end
 end

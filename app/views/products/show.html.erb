@@ -39,4 +39,40 @@
   <div class="mt-4 prose-xl">
     <%= @product.body %>
   </div>
+
+  <div class="mt-4">
+    <h1 class="text-2xl mb-2 font-semibold">Materialien</h1>
+    <table class="border-collapse table-auto w-full prose-lg">
+      <thead>
+        <tr class="text-left">
+          <th>Bezeichnung</th>
+          <th>Kosten</th>
+          <th>Gebraucht</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200 bg-white">
+        <% @product.materials.each do |material| %>
+          <tr>
+            <td class="px-3">
+              <%= material.name %>
+            </td>
+            <td class="px-3">
+              <%= number_to_currency material.cost, unit: "€", format: "%n %u" %>
+            </td>
+            <td class="px-3">
+              <% if material.secondhand? %>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-600">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+              <% else %>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-red-600">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

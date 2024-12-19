@@ -35,6 +35,32 @@
     <%= form.rich_textarea :body, class: "w-full h-64" %>
   </div>
 
+  <div class="mb-4">
+    <h1 class="text-2xl mb-2">Materialien</h1>
+    <%= form.fields_for :materials do |material_form| %>
+      <div class="flex space-x-3">
+        <div>
+          <%= material_form.label :name, "Bezeichnung" %>
+          <%= material_form.text_field :name %>
+        </div>
+        <div>
+          <%= material_form.label :cost, "Kosten" %>
+          <%= material_form.number_field :cost %>
+        </div>
+        <div>
+          <%= material_form.check_box :secondhand %>
+          <%= material_form.label :secondhand, "Gebraucht" %>
+        </div>
+        <% if material_form.object.persisted? %>
+          <div>
+            <%= material_form.checkbox :_destroy %>
+            <%= material_form.label :_destroy, "Löschen" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
   <div>
     <%= form.submit "Produkt speichern" %>
   </div>

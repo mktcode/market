@@ -1,0 +1,11 @@
+material_one:
+  name: Wolle
+  cost: 10.00
+  secondhand: true
+  product: one
+
+material_two:
+  name: Jute
+  cost: 5.00
+  secondhand: false
+  product: one
