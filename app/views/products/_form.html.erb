@@ -12,17 +12,17 @@
   <% end %>
 
   <div class="mb-4">
-    <%= form.label :title, style: "display: block" %>
+    <%= form.label :title, "Titel", style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
   <div class="mb-4">
-    <%= form.label :description, style: "display: block" %>
+    <%= form.label :description, "Kurzbeschreibung", style: "display: block" %>
     <%= form.text_area :description %>
   </div>
 
   <div class="mb-4">
-    <%= form.label :images, style: "display: block" %>
+    <%= form.label :images, "Bilder", style: "display: block" %>
     <% @product.images.each do |image| %>
       <%= form.hidden_field :images, multiple: true, value: image.signed_id %>
     <% end %>
@@ -31,11 +31,11 @@
   </div>
 
   <div class="mb-4">
-    <%= form.label :body, style: "display: block" %>
+    <%= form.label :body, "Ausführliche Beschreibung", class: "block mb-2" %>
     <%= form.rich_textarea :body, class: "w-full h-64" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Produkt speichern" %>
   </div>
 <% end %>
