@@ -1,25 +1,19 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  title: Schürtze
-  description: Selbstgemachte Schürtze aus 100% Baumwolle und mit einer Länge von 90cm.
-  body: Selbstgemachte Schürtze aus 100% Baumwolle und mit einer Länge von 90cm.
+  title: Küchenschürze Blattwerk
+  description: Elegante Schürze aus recyceltem Stoff mit filigranem Muster – perfekt für stilvolles Kochen und Backen.
   user: one
 
 two:
-  title: Ofenhandschuhe
-  description: Selbstgemachte Ofenhandschuhe aus 100% Baumwolle und mit einer Länge von 30cm.
-  body: Selbstgemachte Ofenhandschuhe aus 100% Baumwolle und mit einer Länge von 30cm.
+  title: RustikalGriff
+  description: Hochwertiger Upcycling-Topfhandschuh aus robustem Jutesack-Material – praktisch, nachhaltig und einzigartig im Design.
   user: one
 
 three:
-  title: Topflappen
-  description: Selbstgemachte Topflappen aus 100% Baumwolle und mit einer Länge von 20cm.
-  body: Selbstgemachte Topflappen aus 100% Baumwolle und mit einer Länge von 20cm.
+  title: JuteLiebe
+  description: Vielseitiger Brot- und Obstkorb aus Upcycling-Materialien – nachhaltig, robust und stilvoll.
   user: two
 
 four:
-  title: Tragetasche
-  description: Selbstgemachte Tragetasche aus 100% Baumwolle und mit einer Länge von 40cm.
-  body: Selbstgemachte Tragetasche aus 100% Baumwolle und mit einer Länge von 40cm
+  title: Retro-Halbschürze VintageBlüte
+  description: Schürze im Retro-Look mit feinen Details – stilvoll, praktisch und nachhaltig gefertigt.
   user: two

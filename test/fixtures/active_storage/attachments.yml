@@ -1,19 +1,64 @@
-one_image_attachment:
+one_image_attachment_1:
   name: images
   record: one (Product)
-  blob: one_image_blob
+  blob: one_image_blob_1
 
-two_image_attachment:
+one_image_attachment_2:
+  name: images
+  record: one (Product)
+  blob: one_image_blob_2
+
+one_image_attachment_3:
+  name: images
+  record: one (Product)
+  blob: one_image_blob_3
+
+two_image_attachment_1:
   name: images
   record: two (Product)
-  blob: one_image_blob
+  blob: two_image_blob_1
 
-three_image_attachment:
+two_image_attachment_2:
+  name: images
+  record: two (Product)
+  blob: two_image_blob_2
+
+two_image_attachment_3:
+  name: images
+  record: two (Product)
+  blob: two_image_blob_3
+
+two_image_attachment_4:
+  name: images
+  record: two (Product)
+  blob: two_image_blob_4
+
+three_image_attachment_1:
   name: images
   record: three (Product)
-  blob: one_image_blob
+  blob: three_image_blob_1
 
-four_image_attachment:
+three_image_attachment_2:
+  name: images
+  record: three (Product)
+  blob: three_image_blob_2
+
+three_image_attachment_3:
+  name: images
+  record: three (Product)
+  blob: three_image_blob_3
+
+three_image_attachment_4:
+  name: images
+  record: three (Product)
+  blob: three_image_blob_4
+
+four_image_attachment_1:
   name: images
   record: four (Product)
-  blob: one_image_blob
+  blob: four_image_blob_1
+
+four_image_attachment_2:
+  name: images
+  record: four (Product)
+  blob: four_image_blob_2

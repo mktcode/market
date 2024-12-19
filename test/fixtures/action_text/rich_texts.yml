@@ -1,0 +1,27 @@
+one:
+  record: one (Product)
+  name: body
+  body: |
+    <p>Diese handgefertigte Küchenschürze kombiniert Nachhaltigkeit mit zeitloser Eleganz. Hergestellt aus hochwertigen recycelten Stoffen mit dezentem Blattmuster, ist sie nicht nur funktional, sondern auch ein ästhetischer Blickfang. Der leichte und doch robuste Stoff schützt zuverlässig vor Flecken und Spritzern und fühlt sich angenehm auf der Haut an.</p>
+    <p>Die Schürze ist mit einem verstellbaren Nackenband sowie langen Bindebändern ausgestattet, die für optimalen Sitz und Komfort sorgen. Die durchdachte Verarbeitung zeigt sich in den sauberen Nähten und der langlebigen Qualität. Ob beim Kochen, Backen oder Grillen – diese Schürze ist ein treuer Begleiter, der in jede Küche passt und Nachhaltigkeit auf stilvolle Weise repräsentiert.</p>
+two:
+  record: two (Product)
+  name: body
+  body: |
+    <p>Dieser außergewöhnliche Topfhandschuh verbindet Funktionalität mit Nachhaltigkeit. Hergestellt aus recycelten Jutesäcken, die ursprünglich für den Transport von Waren wie Kaffee oder Reis verwendet wurden, trägt jeder Handschuh eine eigene Geschichte. Das rustikale Material verleiht dem Produkt nicht nur eine authentische Ästhetik, sondern sorgt auch für optimale Hitzebeständigkeit.</p>
+    <p>Die Innenseite des Handschuhs ist mit einem weichen Baumwollstoff ausgekleidet, der angenehm auf der Haut liegt und für zusätzlichen Komfort sorgt. Die stabile Verarbeitung mit doppelt vernähten Kanten garantiert Langlebigkeit und Schutz beim Kochen oder Backen. Die Schriftzüge und Muster auf den Jutesäcken machen jeden Handschuh zu einem Unikat und setzen einen dekorativen Akzent in jeder Küche.</p>
+    <p>Der Handschuh wird in Handarbeit gefertigt und vereint die Werte von Upcycling, Umweltschutz und Funktionalität in einem stilvollen Küchenaccessoire.</p>
+
+three:
+  record: three (Product)
+  name: body
+  body: |
+    <p>Dieser handgefertigte Korb vereint Nachhaltigkeit und Design. Der äußere Teil besteht aus robustem recyceltem Jutestoff, der ursprünglich für den Transport von Waren wie Kaffee oder Getreide verwendet wurde. Die innere Auskleidung aus weichem Baumwollstoff sorgt dafür, dass Obst, Brot oder andere Lebensmittel sicher und schonend aufbewahrt werden können.</p>
+    <p>Der Korb ist stabil, leicht faltbar und vielseitig einsetzbar – ob als Obstschale, Brötchenkorb oder dekorative Aufbewahrungslösung für Küche und Haushalt. Jedes Exemplar ist ein Unikat und erzählt durch die leichte Patina des Jutestoffs seine ganz eigene Geschichte. Die umweltfreundliche Verarbeitung macht diesen Korb zu einer nachhaltigen und praktischen Alternative zu herkömmlichen Produkten.</p>
+
+four:
+  record: four (Product)
+  name: body
+  body: |
+    <p>Diese charmante Halbschürze kombiniert ein nostalgisches Design mit moderner Nachhaltigkeit. Gefertigt aus hochwertigem, recyceltem Stoff, besticht sie durch ihre elegante Optik und den dezenten Spitzensaum, der für einen femininen Akzent sorgt. Die großzügigen Taschen bieten Platz für Küchenutensilien, ein Notizbuch oder andere Kleinigkeiten – ideal für den Einsatz in der Küche, beim Basteln oder im Garten.</p>
+    <p>Das breite Bindeband sorgt für einen sicheren Halt und lässt sich stilvoll zu einer Schleife binden. Dank der nachhaltigen Materialien und sorgfältigen Handarbeit ist jede Schürze ein einzigartiges Stück, das Funktionalität mit einem Hauch von Vintage-Charme verbindet.</p>
