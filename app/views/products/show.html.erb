@@ -2,11 +2,11 @@
 
 <div id="<%= dom_id @product %>">
   <div class="flex justify-between items-center mb-4">
-    <div>
-      <h1 class="text-3xl font-semibold mb-3">
+    <div class="prose-xl">
+      <h1>
         <%= @product.title %>
       </h1>
-      <p class="mb-10 text-gray-600 text-lg">
+      <p>
         <%= @product.description %>
       </p>
     </div>
@@ -36,9 +36,7 @@
     </div>
   </div>
 
-  <div class="mt-4 prose-base">
-    <p>
-      <%= @product.body %>
-    </p>
+  <div class="mt-4 prose-xl">
+    <%= @product.body %>
   </div>
 </div>
