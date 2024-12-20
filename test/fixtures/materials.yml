@@ -9,3 +9,33 @@ material_two:
   cost: 5.00
   secondhand: false
   product: one
+
+material_three:
+  name: Bio-Baumwolle
+  cost: 3.00
+  secondhand: true
+  product: two
+
+material_four:
+  name: Jutesack
+  cost: 2.50
+  secondhand: true
+  product: two
+
+material_five:
+  name: Leinen
+  cost: 0.00
+  secondhand: true
+  product: three
+
+material_six:
+  name: Stoffreste
+  cost: 1.00
+  secondhand: true
+  product: four
+
+material_seven:
+  name: Knöpfe
+  cost: 2.80
+  secondhand: false
+  product: four
