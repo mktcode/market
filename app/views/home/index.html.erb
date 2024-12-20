@@ -5,9 +5,11 @@
       <p class="text-2xl md:text-5xl text-white text-center mb-8">
         Stabile Werte.<br>Keine Kompromisse.
       </p>
-      <button class="text-xl px-6 py-3 bg-black/20 border-white border-2 shadow-xl">
-        Jetzt mitmachen!
-      </button>
+      <%= link_to new_product_path do %>
+        <button class="text-xl px-6 py-3 bg-black/20 border-white border-2 shadow-xl">
+          Ich will mitmachen!
+        </button>
+      <% end %>
     </div>
   </div>
   <h1 class="text-5xl mb-8 mt-24">
@@ -53,7 +55,7 @@
           <label for="clothing">Kleidung</label>
         </div>
       </div>
-      <div id="map" class="w-full aspect-video rounded-xl shadow-lg"></div>
+      <div id="map" class="w-full aspect-video rounded-xl shadow-lg z-40"></div>
     </div>
   </section>
 
