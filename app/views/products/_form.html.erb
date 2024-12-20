@@ -66,6 +66,11 @@
     <% end %>
   </div>
 
+  <div class="mb-4">
+    <%= form.check_box :published %>
+    <%= form.label :published, "Produkt veröffentlichen" %>
+  </div>
+
   <div>
     <%= form.submit "Produkt speichern" %>
   </div>

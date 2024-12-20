@@ -2,22 +2,26 @@ one:
   title: Küchenschürze Blattwerk
   description: Elegante Schürze aus recyceltem Stoff mit filigranem Muster – perfekt für stilvolles Kochen und Backen.
   time_invested: 3.5
+  published: true
   user: one
 
 two:
   title: RustikalGriff
   description: Hochwertiger Upcycling-Topfhandschuh aus robustem Jutesack-Material – praktisch, nachhaltig und einzigartig im Design.
   time_invested: 4
+  published: true
   user: one
 
 three:
   title: JuteLiebe
   description: Vielseitiger Brot- und Obstkorb aus Upcycling-Materialien – nachhaltig, robust und stilvoll.
   time_invested: 4.1
+  published: true
   user: two
 
 four:
   title: Retro-Halbschürze VintageBlüte
   description: Schürze im Retro-Look mit feinen Details – stilvoll, praktisch und nachhaltig gefertigt.
   time_invested: 3
+  published: true
   user: two
