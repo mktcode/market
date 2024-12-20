@@ -23,9 +23,17 @@
 
   <div class="mb-4">
     <%= form.label :images, "Bilder", style: "display: block" %>
-    <% @product.images.each do |image| %>
+    <% @product.ordered_images.each do |image| %>
       <%= form.hidden_field :images, multiple: true, value: image.signed_id %>
     <% end %>
+
+    <div class="flex space-x-3 mb-4" data-controller="lightbox">
+      <% @product.ordered_images.each do |image| %>
+        <%= link_to image, data: { lightbox: "product-gallery" } do %>
+          <%= image_tag image, class: "rounded-lg w-24 aspect-square object-cover" %>
+        <% end %>
+      <% end %>
+    </div>
 
     <%= form.file_field :images, multiple: true %>
   </div>

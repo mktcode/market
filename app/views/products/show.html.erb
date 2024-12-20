@@ -25,16 +25,23 @@
     </div>
   </div>
 
-  <div class="flex space-x-3 items-start">
-    <div class="w-1/3">
-      <%= image_tag @product.images.first, class: "w-full rounded-lg" if @product.images.attached? %>
+  <% if @product.ordered_images.any? %>
+    <div class="flex space-x-3 items-start" data-controller="lightbox">
+      <div class="w-1/3">
+        <%= link_to @product.ordered_images.first, data: { lightbox: "product-gallery" } do %>
+          <%= image_tag @product.ordered_images.first, class: "w-full rounded-lg" %>
+        <% end %>
+      </div>
+      <div class="w-2/3 flex space-x-3">
+        <% @product.ordered_images.each_with_index do |image, index| %>
+          <% next if index.zero? %>
+          <%= link_to image, data: { lightbox: "product-gallery" } do %>
+            <%= image_tag image, class: "rounded-lg w-full aspect-square object-cover" %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-    <div class="w-2/3 flex space-x-3"> 
-      <% @product.images.each do |image| %>
-        <%= image_tag image, class: "w-1/2 rounded-lg" %>
-      <% end %>
-    </div>
-  </div>
+  <% end %>
 
   <div class="mt-4 prose-xl">
     <%= @product.body %>
