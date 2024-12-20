@@ -65,29 +65,27 @@
       </div>
 
       <div class="mt-4">
-        <div class="bg-white grid grid-cols-3 rounded-lg shadow-sm">
+        <div class="bg-white grid grid-cols-3 rounded-lg shadow-sm text-lg">
           <% @product.materials.each do |material| %>
-            <div class="p-3">
+            <div class="p-3 col-span-2 flex items-center">
               <%= material.name %>
-            </div>
-            <div class="p-3">
-              <%= number_to_currency material.cost, unit: "€", format: "%n %u" %>
-            </div>
-            <div class="p-3">
               <% if material.secondhand? %>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-gray-400 inline-block">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
-                </svg>
-                gebraucht
-              <% else %>
-                neu
+                <span class="text-sm text-gray-500 ml-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3 text-gray-400 inline-block">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                  </svg>
+                  wiederverwendet
+                </span>
               <% end %>
             </div>
+            <div class="p-3 text-right">
+              <%= number_to_currency material.cost, unit: "€", format: "%n %u" %>
+            </div>
           <% end %>
-          <div class="p-3 text-xl">
+          <div class="p-3 text-xl col-span-2">
             Gesamtkosten:
           </div>
-          <div class="col-span-2 p-3 text-xl">
+          <div class="p-3 text-xl text-right">
             <span class="font-semibold">
               <%= number_to_currency @product.materials.sum(&:cost), unit: "€", format: "%n %u" %>
             </span>
@@ -100,4 +98,6 @@
   <div class="mt-4 prose-xl">
     <%= @product.body %>
   </div>
+
+  <%= render 'comments' %>
 </div>
