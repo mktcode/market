@@ -13,8 +13,8 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @product = Product.new
-    @product.materials.build
+    @product = Product.new user: Current.user, time_invested: 0
+    @product.materials.build cost: 0
   end
 
   # GET /products/1/edit
