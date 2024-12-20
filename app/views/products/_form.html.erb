@@ -1,4 +1,4 @@
-<%= form_with(model: product) do |form| %>
+<%= form_with model: product, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |form| %>
   <% if product.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -43,27 +43,18 @@
   <div class="mb-4">
     <h1 class="text-2xl mb-2">Materialien</h1>
     <%= form.fields_for :materials do |material_form| %>
-      <div class="flex space-x-3">
-        <div>
-          <%= material_form.label :name, "Bezeichnung" %>
-          <%= material_form.text_field :name %>
-        </div>
-        <div>
-          <%= material_form.label :cost, "Kosten" %>
-          <%= material_form.number_field :cost %>
-        </div>
-        <div>
-          <%= material_form.check_box :secondhand %>
-          <%= material_form.label :secondhand, "Gebraucht" %>
-        </div>
-        <% if material_form.object.persisted? %>
-          <div>
-            <%= material_form.checkbox :_destroy %>
-            <%= material_form.label :_destroy, "Löschen" %>
-          </div>
-        <% end %>
-      </div>
+      <%= render "materials/form", f: material_form %>
     <% end %>
+    <div data-nested-form-target="target"></div>
+    <button type="button" data-action="nested-form#add" class="mt-4">
+      Material hinzufügen
+    </button>
+
+    <template data-nested-form-target="template">
+      <%= form.fields_for :materials, Material.new, child_index: 'NEW_RECORD' do |material_fields| %>
+        <%= render "materials/form", f: material_fields %>
+      <% end %>
+    </template>
   </div>
 
   <div class="mb-4">
