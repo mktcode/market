@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    redirect_to root_url(host: Rails.application.config.main_host), alert: "Registrierung ist deaktivierte.", allow_other_host: true
   end
 
   # GET /users/name/edit
@@ -17,17 +17,18 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
-    @user = User.new(user_params)
+    raise ActionController::RoutingError, "Registrierung ist deaktiviert."
+    # @user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: "Benutzer wurde erfolgreich erstellt." }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @user.save
+    #     format.html { redirect_to @user, notice: "Benutzer wurde erfolgreich erstellt." }
+    #     format.json { render :show, status: :created, location: @user }
+    #   else
+    #     format.html { render :new, status: :unprocessable_entity }
+    #     format.json { render json: @user.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /users/1 or /users/1.json
