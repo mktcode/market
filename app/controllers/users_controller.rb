@@ -60,6 +60,10 @@ class UsersController < ApplicationController
       else
         @user = User.find_by(name: params[:name])
       end
+
+      if @user.nil?
+        redirect_to root_url(host: Rails.application.config.main_host), alert: "Benutzer wurde nicht gefunden.", allow_other_host: true
+      end
     end
 
     def user_params
