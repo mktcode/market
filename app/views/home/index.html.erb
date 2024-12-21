@@ -1,8 +1,8 @@
 <div>
-  <div class="relative w-full h-[500px] bg-cover bg-center rounded-xl overflow-hidden" style="background-image: url('<%= asset_path("header.webp") %>');">
+  <div class="relative w-full h-[500px] sm:h-[500px] bg-cover bg-center rounded-xl overflow-hidden" style="background-image: url('<%= asset_path("header.webp") %>');">
     <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-start rounded-xl">
-      <%= image_tag "emma-herbst-logo.png", class: "w-[400px] mx-auto invert -mt-10 mb-16" %>
-      <p class="text-2xl md:text-5xl text-white text-center mb-8">
+      <%= image_tag "emma-herbst-logo.png", class: "w-[340px] sm:w-[400px] mx-auto invert -mt-10 mb-16" %>
+      <p class="text-4xl sm:text-5xl text-white text-center mb-8">
         Stabile Werte.<br>Keine Kompromisse.
       </p>
       <%= link_to new_product_path do %>
@@ -12,7 +12,7 @@
       <% end %>
     </div>
   </div>
-  <h1 class="text-5xl mb-8 mt-24">
+  <h1 class="text-3xl sm:text-5xl mb-4 mt-12 sm:mb-8 sm:mt-24">
     Gerade fertig geworden
   </h1>
 
@@ -20,10 +20,10 @@
 
   <section class="grid md:grid-cols-2 gap-12 mt-24">
     <div>
-      <h1 class="text-5xl mb-8">
+      <h1 class="text-3xl sm:text-5xl mb-4 sm:mb-8">
         In deiner Nähe
       </h1>
-      <div class="text-gray-700 leading-relaxed space-y-4 text-xl">
+      <div class="text-gray-700 leading-relaxed space-y-4 text-lg sm:text-xl">
         <p>
           Nachhaltigkeit beginnt direkt vor deiner Haustür. Mit unserer interaktiven Karte kannst du entdecken, welche nachhaltigen Produkte und Dienstleistungen es in deiner Umgebung gibt. Egal, ob du nach einem Bioladen, einem Reparaturservice, handgefertigten Produkten oder Secondhand-Angeboten suchst – hier findest du Inspiration und Unterstützung für einen bewussten Lebensstil. Jeder Marker auf der Karte führt dich zu Menschen und Unternehmen, die mit Leidenschaft nachhaltige Lösungen anbieten.
         </p>
@@ -61,19 +61,19 @@
       </svg>
       Unsere Mission
     </h2>
-    <p class="text-gray-700 leading-relaxed columns-1 md:columns-2 gap-12 text-xl">
+    <p class="text-gray-700 leading-relaxed columns-1 md:columns-2 gap-12 text-lg sm:text-xl">
       Uns liegt das Thema Nachhaltigkeit sehr am Herzen und wir sind enttäuscht von der Wegwerfgesellschaft und der Gedankenlosigkeit derer, die eigentlich das Potenzial hätten, etwas zu bewegen. Nachhaltigkeit verkommt zu einem Verkaufsargument und wird viel zu oft nur oberflächlich betrachtet, sowohl von Produzenten als auch von Konsumenten.
       Ein gutes Gewissen reicht uns nicht, aber uns ist auch klar, wie schwer es ist, die Zusammenhänge wirklich zu Ende zu denken. Selbst auf Plattformen, die sich Nachhaltigkeit auf die Fahnen schreiben, müsste man eigentlich jedes Produkt noch einmal genauer unter die Lupe nehmen. Wir wollen einen kompromisslosen Marktplatz schaffen, für Menschen, die sich wirklich Gedanken machen wollen, aber vielleicht nicht die Zeit oder das Geld haben. Wir wollen nicht reich werden. Wir wollen sinnvolle Produkte zugänglicher machen. 
     </p>
     <div class="mt-8 space-y-2 text-2xl">
       <div class="flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="text-green-500 mr-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="text-green-500 mr-4 size-8 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
         <span>100% kostenlos für Käufer und Verkäufer</span>
       </div>
       <div class="flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="text-green-500 mr-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="text-green-500 mr-4 size-8 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
