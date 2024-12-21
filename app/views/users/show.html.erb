@@ -5,7 +5,7 @@
     <div class="mb-4">
       <div class="flex items-center justify-between mb-3">
         <h1 class="text-3xl sm:text-5xl mb-2 flex items-center">
-          <%= image_tag @user.avatar, class: 'w-20 h-20 rounded-full mr-4' %>
+          <%= image_tag @user.avatar, class: 'w-20 h-20 rounded-full mr-4' if @user.avatar.attached? %>
           <span class="first-letter:uppercase">
             <%= @user.name %>
           </span>
