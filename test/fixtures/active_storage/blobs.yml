@@ -11,3 +11,6 @@ three_image_blob_3: <%= ActiveStorage::FixtureSet.blob filename: "3-3.jpg" %>
 three_image_blob_4: <%= ActiveStorage::FixtureSet.blob filename: "3-4.jpg" %>
 four_image_blob_1: <%= ActiveStorage::FixtureSet.blob filename: "4-1.jpg" %>
 four_image_blob_2: <%= ActiveStorage::FixtureSet.blob filename: "4-2.jpg" %>
+
+one_avatar_blob: <%= ActiveStorage::FixtureSet.blob filename: "avatar1.jpg" %>
+two_avatar_blob: <%= ActiveStorage::FixtureSet.blob filename: "avatar2.jpg" %>

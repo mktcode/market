@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="mb-4">
+    <%= form.label :avatar, "Profilbild", style: "display: block" %>
+    <%= form.file_field :avatar %>
+  </div>
+
+  <div class="mb-4">
     <%= form.label :name, "Benutzername", style: "display: block" %>
     <%= form.text_field :name %>
   </div>
