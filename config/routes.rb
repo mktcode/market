@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
   resources :products
+  get "products/:id/delete", to: "products#delete", as: :delete_product
   resources :users, param: :name
 
   constraints subdomain: /.+/ do

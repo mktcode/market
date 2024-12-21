@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :set_product, only: %i[ show edit update delete destroy ]
   allow_unauthenticated_access only: %i[ show ]
 
   # GET /products or /products.json
@@ -47,6 +47,10 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def delete
+    redirect_to products_path unless @product.user == Current.user
   end
 
   # DELETE /products/1 or /products/1.json
