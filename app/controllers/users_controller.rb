@@ -55,7 +55,11 @@ class UsersController < ApplicationController
 
   private
     def set_user
-      @user = User.find_by(name: params[:name])
+      if request.subdomain.present? && request.subdomain != "www"
+        @user = User.find_by(name: request.subdomain)
+      else
+        @user = User.find_by(name: params[:name])
+      end
     end
 
     def user_params

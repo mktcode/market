@@ -192,7 +192,7 @@ resource "hcloud_load_balancer_target" "market-app-2" {
 
 resource "hcloud_managed_certificate" "market-app" {
   name = "market-app"
-  domain_names = ["emmaherbst.de"]
+  domain_names = ["emmaherbst.de", "*.emmaherbst.de"]
 }
 
 resource "hcloud_load_balancer_service" "market-app-health" {
