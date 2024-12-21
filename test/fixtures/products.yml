@@ -1,7 +1,7 @@
 one:
   title: Küchenschürze Blattwerk
   description: Elegante Schürze aus recyceltem Stoff mit filigranem Muster – perfekt für stilvolles Kochen und Backen.
-  time_invested: 3.5
+  time_invested: 5.5
   published: true
   user: one
 
@@ -24,4 +24,4 @@ four:
   description: Schürze im Retro-Look mit feinen Details – stilvoll, praktisch und nachhaltig gefertigt.
   time_invested: 3
   published: true
-  user: two
+  user: one

@@ -98,4 +98,33 @@
   <div class="mt-4 prose-xl">
     <%= @product.body %>
   </div>
+
+  <div class="mt-12">
+    <h1 class="text-2xl mb-2">Anfrage</h1>
+    <p class="text-xl text-gray-600 mb-4">
+      Du hast Interesse an diesem Produkt? Dann schreib <span class="first-letter:uppercase inline-block"><%= @product.user.name %></span> eine Nachricht.
+    </p>
+    <input type="text" placeholder="Dein Name" class="w-full h-12 mb-3">
+    <input type="email" placeholder="Deine E-Mail-Adresse" class="w-full h-12 mb-3">
+    <input type="tel" placeholder="Deine Telefonnummer" class="w-full h-12 mb-3">
+    <input type="text" placeholder="Preis- oder Tauschvorschlag" class="w-full h-12 mb-3">
+    <textarea placeholder="Anfrage" class="h-32"></textarea>
+    <button class="mt-3">Anfrage senden</button>
+  </div>
+
+  <div class="mt-24">
+    <h1 class="text-4xl mb-3">
+      <%= link_to user_path(@product.user), class: 'hover:underline flex items-center w-min' do %>
+        <%= image_tag "https://i.pravatar.cc/300", class: 'w-12 h-12 rounded-full mr-3' %>
+        <span class="first-letter:uppercase">
+          <%= @product.user.name %>
+        </span>
+      <% end %>
+    </h1>
+    <p class="text-2xl text-gray-600">
+      <%= @product.user.bio %>
+    </p>
+
+    <%= render partial: 'products/grid', locals: { products: @product.user.products } %>
+  </div>
 </div>

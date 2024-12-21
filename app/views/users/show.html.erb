@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<div id="<%= dom_id @user %>" class="max-w-screen-lg mx-auto px-4 py-8">
+  <div class="flex justify-between items-center mb-4">
+    <div class="mb-4">
+      <div class="flex items-center justify-between mb-3">
+        <h1 class="text-5xl mb-2 flex items-center">
+          <%= image_tag "https://i.pravatar.cc/300", class: 'w-14 h-14 rounded-full mr-4' %>
+          <span class="first-letter:uppercase">
+            <%= @user.name %>
+          </span>
+        </h1>
+        <%= button_to session_path, method: :delete, class: "secondary" do %>
+          Abmelden
+        <% end %>
+      </div>
+      <p class="text-3xl text-gray-600">
+        <%= @user.bio %>
+      </p>
+    </div>
+  </div>
+
+  <%= render partial: 'products/grid', locals: { products: @user.products } %>
+</div>

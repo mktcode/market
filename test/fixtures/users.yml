@@ -1,9 +1,13 @@
 <% password_digest = BCrypt::Password.create("password") %>
 
 one:
-  email_address: one@example.com
+  email_address: maren@emmaherbst.de
+  name: maren
+  bio: Nachhaltigkeit im Herzen, Qualität im Fokus. Ich biete Produkte an, die mit Bedacht ausgewählt und mit Verantwortung hergestellt wurden – für alle, die echte Werte schätzen.
   password_digest: <%= password_digest %>
 
 two:
-  email_address: two@example.com
+  email_address: markus@emmaherbst.de
+  name: markus
+  bio: Engagierter Tüftler und Nachhaltigkeitsfan. Auf der Suche nach langlebigen, fairen und durchdachten Produkten, die unsere Welt ein kleines Stück besser machen. Hier, um stabile Werte zu schaffen und zu teilen.
   password_digest: <%= password_digest %>

@@ -1,18 +1,18 @@
 <%= link_to product_path(product) do %>
   <div class="bg-white rounded-lg hover:shadow-lg transition">
     <img src="<%= url_for(product.images.first) %>" alt="<%= product.title %>" class="w-full aspect-square object-cover rounded-t-md">
-    <h3 class="text-lg font-semibold mt-4 px-4"><%= product.title %></h3>
-    <p class="text-gray-600 mt-2 px-4 line-clamp-2"><%= product.description %></p>
-    <div class="mt-4 flex justify-between items-center px-4 pb-4">
+    <h3 class="text-lg font-semibold mt-4 px-4 truncate"><%= product.title %></h3>
+    <p class="text-gray-600 @5xl:mt-2 px-4 line-clamp-2"><%= product.description %></p>
+    <div class="mt-2 @5xl:mt-4 flex justify-between items-center px-4 pb-4">
       <div class="flex flex-col">
         <div>Materialkosten:</div>
-        <span class="text-xl font-bold text-gray-800">
+        <span class="@5xl:text-xl font-bold text-gray-800">
           <%= number_to_currency product.materials.sum(&:cost), unit: "€", format: "%n %u" %>
         </span>
       </div>
       <div class="flex flex-col items-end">
         <div>Arbeitszeit:</div>
-        <span class="text-xl font-bold text-gray-800">
+        <span class="@5xl:text-xl font-bold text-gray-800">
           <%= number_with_precision(product.time_invested, precision: (product.time_invested % 1 == 0 ? 0 : 1), separator: ",") %> Stunden
         </span>
       </div>

@@ -16,12 +16,7 @@
     Gerade fertig geworden
   </h1>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    <% @products.each do |product| %>
-      <%= render partial: 'products/card', locals: { product: product } %>
-    <% end %>
-  </div>
-
+  <%= render partial: 'products/grid', locals: { products: @products } %>
 
   <section class="grid md:grid-cols-2 gap-12 mt-24">
     <div>
