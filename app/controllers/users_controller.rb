@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    redirect_to root_url(host: Rails.application.config.main_host), alert: "Registrierung ist deaktivierte.", allow_other_host: true
+    redirect_to root_url(host: Rails.application.config.main_host), alert: "Registrierung ist deaktiviert.", allow_other_host: true
   end
 
   # GET /users/name/edit
