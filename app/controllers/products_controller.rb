@@ -50,11 +50,13 @@ class ProductsController < ApplicationController
   end
 
   def delete
-    redirect_to products_path unless @product.user == Current.user
+    redirect_to product_path @product unless @product.user == Current.user
   end
 
   # DELETE /products/1 or /products/1.json
   def destroy
+    raise ActiveRecord::RecordNotFound unless @product.user == Current.user
+
     @product.destroy!
 
     respond_to do |format|
