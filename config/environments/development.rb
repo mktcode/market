@@ -78,6 +78,7 @@ Rails.application.configure do
 
   # Enable emmaherbst.local:3000
   config.hosts = [
+    "localhost:3000",
     "emmaherbst.local:3000",
     /.*\.emmaherbst\.local\:3000/
   ]
