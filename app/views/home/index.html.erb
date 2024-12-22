@@ -20,42 +20,6 @@
 
   <%= render partial: 'products/grid', locals: { products: @products } %>
 
-  <section class="grid md:grid-cols-2 gap-12 mt-24">
-    <div>
-      <h1 class="text-3xl sm:text-5xl mb-4 sm:mb-8">
-        In deiner Nähe
-      </h1>
-      <div class="text-gray-700 leading-relaxed space-y-4 text-lg sm:text-xl">
-        <p>
-          Nachhaltigkeit beginnt direkt vor deiner Haustür. Mit unserer interaktiven Karte kannst du entdecken, welche nachhaltigen Produkte und Dienstleistungen es in deiner Umgebung gibt. Egal, ob du nach einem Bioladen, einem Reparaturservice, handgefertigten Produkten oder Secondhand-Angeboten suchst – hier findest du Inspiration und Unterstützung für einen bewussten Lebensstil. Jeder Marker auf der Karte führt dich zu Menschen und Unternehmen, die mit Leidenschaft nachhaltige Lösungen anbieten.
-        </p>
-        <p>
-          Klick auf die Marker, um mehr über die Anbieter zu erfahren und direkt mit ihnen in Kontakt zu treten. So kannst du gezielt lokale Initiativen unterstützen und die Umweltbelastung durch lange Lieferketten vermeiden.
-        </p>
-        <p>
-          Du bietest selbst nachhaltige Produkte oder Dienstleistungen an? Dann werde Teil unserer Community und trage deine Angebote kostenlos ein. Gemeinsam stärken wir regionale Netzwerke und fördern eine nachhaltigere Wirtschaft – direkt in deiner Nähe.
-        </p>
-      </div>
-    </div>
-    <div>
-      <div class="flex justify-start items-center mb-4 gap-4">
-        <div>
-          <input type="checkbox" id="food" name="food" value="food" checked>
-          <label for="food">Lebensmittel</label>
-        </div>
-        <div>
-          <input type="checkbox" id="repair" name="repair" value="repair" checked>
-          <label for="repair">Reparatur</label>
-        </div>
-        <div>
-          <input type="checkbox" id="clothing" name="clothing" value="clothing" checked>
-          <label for="clothing">Kleidung</label>
-        </div>
-      </div>
-      <div id="map" class="w-full aspect-video rounded-xl shadow-lg z-40"></div>
-    </div>
-  </section>
-
   <section class="mt-24">
     <h2 class="text-3xl mb-3 flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="inline-block text-green-600 size-12 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -84,7 +48,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="text-green-600 mr-4 size-8 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 1 .198-.471 1.575 1.575 0 1 0-2.228-2.228 3.818 3.818 0 0 0-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0 1 16.35 15m.002 0h-.002" />
         </svg>
-        <span>Keine Werbung! Kein Kommerz! Finanziert durch Spenden!</span>
+        <span>Keine Werbung! Kein Kommerz!</span>
       </div>
     </div>
   </section>

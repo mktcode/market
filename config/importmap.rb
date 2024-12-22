@@ -8,7 +8,6 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.esm.js"
 pin "local-time" # @3.0.2
-pin "leaflet" # @1.9.4
 pin "@stimulus-components/rails-nested-form", to: "@stimulus-components--rails-nested-form.js" # @5.0.0
 pin "@stimulus-components/lightbox", to: "@stimulus-components--lightbox.js" # @4.0.0
 pin "lightgallery" # @2.8.2

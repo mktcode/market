@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get "explore", to: "home#explore", as: :explore
-  get "map/index"
   resource :session
   resources :passwords, param: :token
   resources :products
