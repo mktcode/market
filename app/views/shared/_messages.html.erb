@@ -1,11 +1,13 @@
+<div>
 <% if alert = flash[:alert] %>
-  <div class="mb-4">
+  <div>
     <%= render partial: 'shared/alert', locals: { notice: alert } %>
   </div>
 <% end %>
 
 <% if notice = flash[:notice] %>
-  <div class="mb-4">
+  <div>
     <%= render partial: 'shared/notice', locals: { notice: notice } %>
   </div>
 <% end %>
+</div>
