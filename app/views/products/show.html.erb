@@ -140,7 +140,7 @@
     <div class="mb-3 flex items-start justify-between">
       <h1 class="text-4xl">
         <%= link_to user_path(@product.user), class: 'hover:underline flex items-center' do %>
-          <%= image_tag @product.user.avatar, class: 'w-12 h-12 rounded-full mr-3' if @product.user.avatar.attached? %>
+          <%= image_tag @product.user.avatar.variant(:thumb), class: 'w-12 h-12 rounded-full mr-3' if @product.user.avatar.attached? %>
           <span class="first-letter:uppercase">
             <%= @product.user.name %>
           </span>
