@@ -22,11 +22,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-gray-100">
+  <body class="bg-gray-50">
     <%= render "shared/navbar" %>
-    <main class="container mx-auto px-3 sm:px-4 pt-4 sm:pt-12 pb-24">
-      <%= yield %>
-    </main>
+    <%= yield %>
     <%= render "shared/footer" %>
   </body>
 </html>
