@@ -37,9 +37,9 @@
   <div class="flex flex-col sm:flex-row space-y-3 sm:space-x-3 sm:space-y-0 items-start" data-controller="lightbox">
     <% if @product.ordered_images.any? %>
       <div class="sm:w-1/3">
-        <%= link_to @product.ordered_images.first, data: { lightbox: "product-gallery" } do %>
+        <%= link_to @product.ordered_images.first.variant(:big), data: { lightbox: "product-gallery" } do %>
           <div class="relative aspect-square w-full group overflow-hidden rounded-lg">
-            <%= image_tag @product.ordered_images.first, class: "w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" %>
+            <%= image_tag @product.ordered_images.first.variant(:thumb), class: "w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" %>
             <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -59,9 +59,9 @@
         <div class="sm:w-24 flex sm:flex-col space-x-3 sm:space-y-3 sm:space-x-0">
           <% @product.ordered_images.each_with_index do |image, index| %>
             <% next if index.zero? %>
-            <%= link_to image, data: { lightbox: "product-gallery" } do %>
+            <%= link_to image.variant(:big), data: { lightbox: "product-gallery" } do %>
               <div class="relative aspect-square w-full group overflow-hidden rounded-lg">
-                <%= image_tag image, class: "w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" %>
+                <%= image_tag image.variant(:thumb), class: "w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" %>
                 <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -5,6 +5,7 @@ class Product < ApplicationRecord
   has_rich_text :body
   has_many_attached :images do |attachable|
     attachable.variant :thumb, resize_to_fill: [ 350, 350 ]
+    attachable.variant :big, resize_to_limit: [ 1000, 1000 ]
   end
 
   def ordered_images
