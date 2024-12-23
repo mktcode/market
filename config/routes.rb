@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get "products/:id/delete", to: "products#delete", as: :delete_product
   resources :users, param: :name
 
+  get "cart", to: "cart#index", as: :cart
+
   constraints subdomain: /.+/ do
     get "/", to: "users#show", as: :user_subdomain
   end

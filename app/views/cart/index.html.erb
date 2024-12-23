@@ -1,0 +1,13 @@
+<%= render partial: 'shared/header' %>
+
+<%= render layout: 'layouts/content' do %>
+  <h1 class="text-3xl sm:text-5xl mb-4 sm:mb-8">
+    Warenkorb
+
+    <div data-controller="cart">
+      <span class="text-sm ml-2">
+        <button data-action="click->cart#clear">Leeren</button>
+      </span>
+    </div>
+  </h1>
+<% end %>
