@@ -1,8 +1,10 @@
-<%= render partial: 'header', locals: { header: @user.header } if @user.header.attached? %>
+<% if @user.header.attached? %>
+  <%= render partial: 'users/header', locals: { header: @user.header } %>
+<% else %>
+  <%= render partial: 'shared/header' %>
+<% end %>
 
 <div id="<%= dom_id @user %>" class="max-w-screen-lg mx-auto py-4 sm:py-8">
-  <%= render partial: 'shared/messages' %>
-  
   <div class="flex justify-between items-center mb-4">
     <div class="mb-4">
       <div class="flex items-start justify-between mb-3">
