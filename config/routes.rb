@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get "explore", to: "home#explore", as: :explore
   resource :session
   resources :passwords, param: :token
-  resources :products
+  resources :products, except: :index
   get "products/:id/delete", to: "products#delete", as: :delete_product
   resources :users, param: :name
 

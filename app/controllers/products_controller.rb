@@ -2,11 +2,6 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update delete destroy ]
   allow_unauthenticated_access only: %i[ show ]
 
-  # GET /products or /products.json
-  def index
-    @products = Current.user.products
-  end
-
   # GET /products/1 or /products/1.json
   def show
   end
