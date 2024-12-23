@@ -1,10 +1,6 @@
-<% if @user.header.attached? %>
-  <%= render partial: 'users/header', locals: { header: @user.header } %>
-<% else %>
-  <%= render partial: 'shared/header' %>
-<% end %>
+<%= render partial: 'shared/header' %>
 
-<div id="<%= dom_id @user %>" class="max-w-screen-lg mx-auto py-8 sm:py-16">
+<%= render layout: 'layouts/content' do %>
   <div class="flex justify-between items-center mb-4">
     <div class="mb-4">
       <div class="flex items-start justify-between mb-3">
@@ -59,4 +55,4 @@
   </div>
 
   <%= render partial: 'products/grid', locals: { products: @user.products } %>
-</div>
+<% end %>

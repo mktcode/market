@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
   allow_unauthenticated_access only: %i[ show ]
 
-  # GET /users/name or /users/name.json or name.emmaherbst.de
+  # GET /users/name or name.emmaherbst.de
   def show
   end
 
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   def edit
   end
 
-  # POST /users or /users.json
+  # POST /users
   def create
     raise ActionController::RoutingError, "Registrierung ist deaktiviert."
     # @user = User.new(user_params)
@@ -23,34 +23,29 @@ class UsersController < ApplicationController
     # respond_to do |format|
     #   if @user.save
     #     format.html { redirect_to @user, notice: "Benutzer wurde erfolgreich erstellt." }
-    #     format.json { render :show, status: :created, location: @user }
     #   else
     #     format.html { render :new, status: :unprocessable_entity }
-    #     format.json { render json: @user.errors, status: :unprocessable_entity }
     #   end
     # end
   end
 
-  # PATCH/PUT /users/1 or /users/1.json
+  # PATCH/PUT /users/1
   def update
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: "Profil wurde erfolgreich aktualisiert." }
-        format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /users/1 or /users/1.json
+  # DELETE /users/1
   def destroy
     @user.destroy!
 
     respond_to do |format|
       format.html { redirect_to user_path, status: :see_other, notice: "Benutzer wurde erfolgreich gelöscht." }
-      format.json { head :no_content }
     end
   end
 
@@ -68,6 +63,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.expect(user: [ :name, :bio, :avatar, :header ])
+      params.expect(user: [ :name, :bio, :avatar, :header, :slogan ])
     end
 end

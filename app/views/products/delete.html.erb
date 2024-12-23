@@ -1,4 +1,6 @@
-<div id="<%= dom_id @product %>" class="max-w-screen-lg mx-auto py-4 sm:py-8">
+<%= render partial: 'shared/header' %>
+
+<%= render layout: 'layouts/content' do %>
   <div class="flex justify-between items-center mb-4">
     <div class="mb-4">
       <div class="flex items-center justify-between mb-3">
@@ -33,4 +35,4 @@
       Ja, wirklich löschen
     <% end %>
   </div>
-</div>
+<% end %>

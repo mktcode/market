@@ -1,4 +1,6 @@
-<div class="container mx-auto px-3 sm:px-4 pb-12 pt-24">
+<%= render partial: 'shared/header' %>
+
+<%= render layout: 'layouts/content' do %>
   <% content_for :title, "Editing product" %>
 
   <div class="flex justify-between items-center mb-4">
@@ -24,4 +26,4 @@
   </div>
 
   <%= render "form", product: @product %>
-</div>
+<% end %>
