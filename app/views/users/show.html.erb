@@ -1,3 +1,5 @@
+<%= render partial: 'header', locals: { header: @user.header } if @user.header.attached? %>
+
 <div id="<%= dom_id @user %>" class="max-w-screen-lg mx-auto py-4 sm:py-8">
   <%= render partial: 'shared/messages' %>
   

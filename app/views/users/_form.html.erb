@@ -17,6 +17,11 @@
   </div>
 
   <div class="mb-4">
+    <%= form.label :header, "Titelbild", style: "display: block" %>
+    <%= form.file_field :header %>
+  </div>
+
+  <div class="mb-4">
     <%= form.label :name, "Benutzername", style: "display: block" %>
     <%= form.text_field :name %>
   </div>
