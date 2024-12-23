@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
     @product.destroy!
 
     respond_to do |format|
-      format.html { redirect_to products_path, status: :see_other, notice: "Produkt wurde erfolgreich gelöscht." }
+      format.html { redirect_to user_path Current.user, status: :see_other, notice: "Produkt wurde erfolgreich gelöscht." }
       format.json { head :no_content }
     end
   end
