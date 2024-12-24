@@ -1,5 +1,5 @@
 <div class="flex items-start mb-3">
-  <img src="<%= url_for(product.images.first.variant(:thumb)) %>" alt="<%= product.title %>" class="w-32 aspect-square object-cover rounded-md">
+  <img src="<%= url_for(product.images.first.variant(:thumb)) %>" alt="<%= product.title %>" class="w-20 sm:w-32 aspect-square object-cover rounded-md">
   <div class="ml-3">
     <h1 class="text-2xl sm:text-3xl">
       <%= product.title %>
