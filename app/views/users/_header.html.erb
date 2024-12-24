@@ -1,4 +1,0 @@
-<% image = user.header.attached? ? user.header.variant(:big) : nil %>
-<% logo = user.logo.attached? ? user.logo.variant(:medium) : nil %>
-<% slogan = user.slogan.present? ? user.slogan : nil %>
-<%= render partial: 'shared/header', locals: { image: image, logo: logo, slogan: slogan } %>
