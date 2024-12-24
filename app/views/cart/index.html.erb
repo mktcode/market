@@ -1,13 +1,17 @@
 <%= render partial: 'shared/header' %>
 
 <%= render layout: 'layouts/content' do %>
-  <h1 class="text-3xl sm:text-5xl mb-4 sm:mb-8">
-    Warenkorb
+  <div class="flex items-start justify-between mb-12">
+    <h1 class="text-3xl sm:text-5xl flex items-center">
+      Warenkorb
+    </h1>
 
     <div data-controller="cart-clear">
-      <span class="text-sm ml-2">
-        <button data-action="click->cart-clear#clear">Leeren</button>
-      </span>
+      <button data-action="click->cart-clear#clear">Leeren</button>
     </div>
-  </h1>
+  </div>
+
+  <turbo-frame id="cart-items" src="<%= cart_products_path %>?ids=281110143,113629430">
+    Lade Warenkorb...
+  </turbo-frame>
 <% end %>

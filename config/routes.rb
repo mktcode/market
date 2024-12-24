@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users, param: :name
 
   get "cart", to: "cart#index", as: :cart
+  get "cart/products", to: "cart#products", as: :cart_products
 
   constraints subdomain: /.+/ do
     get "/", to: "users#show", as: :user_subdomain
