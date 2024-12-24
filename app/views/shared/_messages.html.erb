@@ -1,4 +1,11 @@
 <div>
+<% if Rails.env.production? %>
+  <div class="bg-blue-500 text-white text-center p-3">
+    <p>
+      <strong>Demo:</strong> Alle Daten werden regelmäßig gelöscht. Alle Angaben unter Vorbehalt.
+    </p>
+  </div>
+<% end %>
 <% if alert = flash[:alert] %>
   <div>
     <%= render partial: 'shared/alert', locals: { notice: alert } %>
