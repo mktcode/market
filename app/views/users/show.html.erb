@@ -3,7 +3,7 @@
 <%= render layout: 'layouts/content' do %>
   <div class="flex justify-between items-center mb-4">
     <div class="mb-4">
-      <div class="flex items-start justify-between mb-3">
+      <div class="flex flex-col sm:flex-row items-start justify-between mb-3">
         <h1 class="text-3xl sm:text-5xl mb-2 flex items-center">
           <%= image_tag @user.avatar.variant(:thumb), class: 'w-20 h-20 rounded-full mr-4' if @user.avatar.attached? %>
           <span class="first-letter:uppercase">
@@ -21,15 +21,6 @@
             </button>
           <% end %>
           <% if Current.user == @user %>
-            <%= link_to new_product_path do %>
-              <button>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 mr-2 opacity-50">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                </svg>
-
-                Neues Produkt
-              </button>
-            <% end %>
             <%= link_to edit_user_path(@user), class: "secondary" do %>
               <button>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 mr-2 opacity-50">
@@ -39,9 +30,21 @@
                 Profil bearbeiten
               </button>
             <% end %>
+            <%= link_to new_product_path do %>
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 sm:mr-2 opacity-50">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+                <span class="hidden sm:inline">
+                  Neues Produkt
+                </span>
+              </button>
+            <% end %>
             <%= button_to session_path, method: :delete, class: "secondary" do %>
-              Abmelden
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 ml-2 rotate-180 opacity-50">
+              <span class="hidden sm:inline">
+                Abmelden
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 sm:ml-2 rotate-180 opacity-50">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
               </svg>
             <% end %>
