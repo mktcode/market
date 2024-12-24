@@ -50,6 +50,10 @@
     @apply block w-full px-3 py-2 border border-gray-300 bg-white rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-green-600 focus:ring-opacity-75;
   }
 
+  p a {
+    @apply text-green-600 underline hover:text-green-800;
+  }
+
   input[type="checkbox"] {
     @apply form-checkbox text-green-600 focus:ring-green-600 rounded;
   }
