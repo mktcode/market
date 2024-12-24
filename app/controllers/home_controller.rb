@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  allow_unauthenticated_access only: [ :index, :explore ]
+  allow_unauthenticated_access only: [ :index, :explore, :info ]
 
   def index
     @products = Product.where(published: true).order(created_at: :desc).limit(4)
@@ -7,5 +7,8 @@ class HomeController < ApplicationController
 
   def explore
     @products = Product.where(published: true)
+  end
+
+  def info
   end
 end
