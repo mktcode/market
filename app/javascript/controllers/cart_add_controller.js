@@ -10,7 +10,13 @@ export default class extends Controller {
   addProduct() {
     const productId = this.productIdTarget.value;
 
-    localStorage.setItem("cart", JSON.stringify([productId]));
+    const savedCart = localStorage.getItem("cart");
+    let items = savedCart ? JSON.parse(savedCart) : [];
+    if (!items.includes(productId)) {
+      items.push(productId);
+      localStorage.setItem("cart", JSON.stringify(items));
+    }
+
     this.dispatch("productAdded")
     console.log("Product added", productId);
   }
