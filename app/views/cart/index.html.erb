@@ -3,7 +3,7 @@
 <%= render layout: 'layouts/content' do %>
   <div class="flex items-start justify-between mb-12">
     <h1 class="text-3xl sm:text-5xl flex items-center">
-      Warenkorb
+      Merkliste
     </h1>
 
     <div data-controller="cart-clear">
@@ -17,6 +17,6 @@
   </div>
 
   <turbo-frame id="cart-items" src="<%= cart_products_path %>?ids=281110143,113629430">
-    Lade Warenkorb...
+    Lade Merkliste...
   </turbo-frame>
 <% end %>
