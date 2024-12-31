@@ -11,4 +11,7 @@ class HomeController < ApplicationController
 
   def info
   end
+
+  def imprint
+  end
 end
