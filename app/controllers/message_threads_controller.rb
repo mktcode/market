@@ -23,4 +23,16 @@ class MessageThreadsController < ApplicationController
 
     redirect_to message_thread_path(message_thread)
   end
+
+  def add_message
+    message_thread = MessageThread.find(params[:message_thread_id])
+
+    raise ActiveRecord::RecordNotFound unless message_thread.creator == Current.user || message_thread.recipient == Current.user
+
+    mark_as_read = message_thread.recipient == Current.user
+
+    message_thread.messages.create!(sender: Current.user, content: params[:content], read_at: mark_as_read ? Time.zone.now : nil)
+
+    redirect_to message_thread_path(message_thread)
+  end
 end

@@ -25,5 +25,12 @@
         </li>
       <% end %>
     </ul>
+    <%= form_with url: add_message_to_thread_path do |form| %>
+      <%= form.hidden_field :message_thread_id, value: @message_thread.id %>
+      <%= form.text_area :content, placeholder: "Deine Nachricht", required: true %>
+      <button class="mt-3">
+        Nachricht senden
+      </button>
+    <% end %>
   </div>
 <% end %>
