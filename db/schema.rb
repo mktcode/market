@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_01_145226) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_01_151048) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -77,6 +77,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_01_145226) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "read_at"
     t.index ["message_thread_id"], name: "index_messages_on_message_thread_id"
     t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
