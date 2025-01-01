@@ -135,18 +135,19 @@
     <%= @product.body %>
   </div>
 
-  <div class="mt-12">
-    <h1 class="text-2xl mb-2">Anfrage</h1>
-    <p class="text-lg sm:text-xl text-gray-600 mb-4">
-      Du hast Interesse an diesem Produkt? Dann schreib <span class="first-letter:uppercase inline-block"><%= @product.user.name %></span> eine Nachricht.
-    </p>
-    <input type="text" placeholder="Dein Name" class="w-full h-12 mb-3">
-    <input type="email" placeholder="Deine E-Mail-Adresse" class="w-full h-12 mb-3">
-    <input type="tel" placeholder="Deine Telefonnummer" class="w-full h-12 mb-3">
-    <input type="text" placeholder="Preis- oder Tauschvorschlag" class="w-full h-12 mb-3">
-    <textarea placeholder="Anfrage" class="h-32"></textarea>
-    <button class="mt-3">Anfrage senden</button>
-  </div>
+  <% if @product.user != Current.user %>
+    <div class="mt-12">
+      <h1 class="text-2xl mb-2">Nachricht schreiben</h1>
+      <p class="text-lg sm:text-xl text-gray-600 mb-4">
+        Du hast Interesse an diesem Produkt? Dann schreib <span class="first-letter:uppercase inline-block"><%= @product.user.name %></span> eine Nachricht.
+      </p>
+      <%= form_with url: create_message_thread_with_message_and_product_path do |form| %>
+        <%= form.hidden_field :product_id, value: @product.id %>
+        <%= form.text_area :content, placeholder: "Deine Nachricht", required: true %>
+        <button class="mt-3">Nachricht senden</button>
+      <% end %>
+    </div>
+  <% end %>
 
   <div class="mt-24">
     <div class="mb-3 flex flex-col sm:flex-row items-start justify-between">

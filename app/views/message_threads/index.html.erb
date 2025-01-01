@@ -5,7 +5,8 @@
     <h1 class="text-3xl sm:text-5xl flex items-center mb-8">
       Nachrichten
     </h1>
-    <% @message_threads.each do |message_thread| %>
+    <h2>Eingehende Nachrichten</h2>
+    <% @incoming_message_threads.each do |message_thread| %>
       <%= link_to message_thread_path(message_thread) do %>
         <div class="flex items-center space-x-4 py-4 border-b border-gray-200">
           <div class="flex-shrink-0">
@@ -23,10 +24,30 @@
         </div>
       <% end %>
     <% end %>
-    <% if @message_threads.empty? %>
+    <% if @incoming_message_threads.empty? %>
       <p class="text-gray-600 mt-4 text-lg">
         Keine Nachrichten vorhanden.
       </p>
+    <% end %>
+
+    <h2 class="mt-8">Gesendete Nachrichten</h2>
+    <% @outgoing_message_threads.each do |message_thread| %>
+      <%= link_to message_thread_path(message_thread) do %>
+        <div class="flex items-center space-x-4 py-4 border-b border-gray-200">
+          <div class="flex-shrink-0">
+            <%= image_tag message_thread.creator.avatar.variant(:thumb), class: 'w-12 h-12 rounded-full' %>
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="font-semibold"><%= message_thread.creator.name %></span>
+              <span class="text-gray-600 text-sm"><%= message_thread.updated_at.strftime('%d.%m.%Y %H:%M') %></span>
+            </div>
+            <div class="text-gray-800 text-lg">
+              <%= message_thread.messages.last.content %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 <% end %>

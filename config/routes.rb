@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get "messages", to: "message_threads#index", as: :message_threads
   get "messages/:id", to: "message_threads#show", as: :message_thread
+  post "messages", to: "message_threads#create_with_message_and_product", as: :create_message_thread_with_message_and_product
 
   get "cart", to: "cart#index", as: :cart
   get "cart/products", to: "cart#products", as: :cart_products

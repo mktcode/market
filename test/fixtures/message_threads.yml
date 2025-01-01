@@ -1,3 +1,4 @@
 thread_one:
   creator: one
+  recipient: two
   products: [one, two]
