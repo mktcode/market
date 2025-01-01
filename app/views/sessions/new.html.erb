@@ -1,4 +1,4 @@
-<%= render partial: 'shared/header' %>
+<%= render partial: 'shared/header_flat' %>
 
 <%= render layout: 'layouts/content' do %>
   <div class="bg-green-50 border-l-4 border-green-600 text-green-800 p-4 mt-5 flex items-center text-lg">
@@ -14,22 +14,26 @@
 
   <%= form_with url: session_url, class: "contents" do |form| %>
     <div class="my-5">
-      <%= form.label :email_address, "E-Mail", class: "block text-sm font-medium text-gray-700" %>
+      <%= form.label :email_address, "E-Mail", class: "block text-gray-700" %>
       <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "E-Mail-Adresse eingeben", value: params[:email_address], class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
     </div>
 
     <div class="my-5">
-      <%= form.label :password, "Passwort", class: "block text-sm font-medium text-gray-700" %>
+      <%= form.label :password, "Passwort", class: "block text-gray-700" %>
       <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Passwort eingeben.", maxlength: 72, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
     </div>
 
     <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
       <div class="inline">
-        <%= form.submit "Anmelden", class: "rounded-lg py-3 px-5 bg-green-600 text-white inline-block font-medium cursor-pointer" %>
+        <%= form.submit "Anmelden" %>
       </div>
 
-      <div class="mt-4 text-sm text-gray-500 sm:mt-0">
-        <%= link_to "Passwort vergessen?", new_password_path, class: "text-gray-700 underline" %>
+      <div class="mt-4 text-gray-500 sm:mt-0">
+        <%= link_to new_password_path do %>
+          <button class="secondary">
+            Passwort vergessen?
+          </button>
+        <% end %>
       </div>
     </div>
   <% end %>
