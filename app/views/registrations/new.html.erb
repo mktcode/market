@@ -15,12 +15,12 @@
   <%= form_with url: registrations_path do |form| %>
     <div class="my-5">
       <%= form.label :name, "Benutzername", class: "block text-gray-700" %>
-      <%= form.text_field :name, required: true, autofocus: true, autocomplete: "username", placeholder: "Benutzername eingeben", value: params[:name] %>
+      <%= form.text_field :name, required: true, autocomplete: "username", placeholder: "Benutzername eingeben", value: params[:name] %>
     </div>
 
     <div class="my-5">
       <%= form.label :email_address, "E-Mail", class: "block text-gray-700" %>
-      <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "E-Mail-Adresse eingeben", value: params[:email_address] %>
+      <%= form.email_field :email_address, required: true, autocomplete: "email", placeholder: "E-Mail-Adresse eingeben", value: params[:email_address] %>
     </div>
 
     <div class="my-5">
