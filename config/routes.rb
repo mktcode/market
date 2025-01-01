@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get "products/:id/delete", to: "products#delete", as: :delete_product
   resources :users, param: :name
 
+  get "messages", to: "message_threads#index", as: :message_threads
+  get "messages/:id", to: "message_threads#show", as: :message_thread
+
   get "cart", to: "cart#index", as: :cart
   get "cart/products", to: "cart#products", as: :cart_products
 

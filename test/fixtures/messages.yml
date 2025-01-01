@@ -1,0 +1,9 @@
+message_one:
+  message_thread: thread_one
+  sender: one
+  content: "This is the first message."
+
+message_two:
+  message_thread: thread_one
+  sender: two
+  content: "This is the second message."

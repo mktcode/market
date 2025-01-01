@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_23_145252) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_01_145226) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -59,6 +59,28 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_23_145252) do
     t.index ["product_id"], name: "index_materials_on_product_id"
   end
 
+  create_table "message_threads", force: :cascade do |t|
+    t.bigint "creator_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_message_threads_on_creator_id"
+  end
+
+  create_table "message_threads_products", id: false, force: :cascade do |t|
+    t.bigint "message_thread_id", null: false
+    t.bigint "product_id", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "message_thread_id", null: false
+    t.bigint "sender_id", null: false
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["message_thread_id"], name: "index_messages_on_message_thread_id"
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -96,6 +118,9 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_23_145252) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "materials", "products"
+  add_foreign_key "message_threads", "users", column: "creator_id"
+  add_foreign_key "messages", "message_threads"
+  add_foreign_key "messages", "users", column: "sender_id"
   add_foreign_key "products", "users"
   add_foreign_key "sessions", "users"
 end

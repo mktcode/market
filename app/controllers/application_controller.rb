@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
 
   def unread_messages_count
     return 0 unless Current.user
-    Current.unread_messages_count = 1
+    Current.unread_messages_count = Current.user.message_threads.sum { |thread| thread.messages.count }
   end
 end
