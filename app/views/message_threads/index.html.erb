@@ -49,5 +49,10 @@
         </div>
       <% end %>
     <% end %>
+    <% if @outgoing_message_threads.empty? %>
+      <p class="text-gray-600 mt-4 text-lg">
+        Keine Nachrichten vorhanden.
+      </p>
+    <% end %>
   </div>
 <% end %>
