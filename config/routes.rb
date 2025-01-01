@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get "products/:id/delete", to: "products#delete", as: :delete_product
   resources :users, param: :name
 
+  resources :registrations, only: %i[ new create ]
+  get "registrations/confirm/:token", to: "registrations#confirm", as: :confirm_registration
+
   get "messages", to: "message_threads#index", as: :message_threads
   get "messages/:id", to: "message_threads#show", as: :message_thread
   post "messages", to: "message_threads#create_with_message_and_product", as: :create_message_thread_with_message_and_product

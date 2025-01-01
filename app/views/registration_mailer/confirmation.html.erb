@@ -1,0 +1,9 @@
+<h1>Registrierung bestätigen</h1>
+
+<p>
+  Hallo <%= @user.name %>,<br />
+  <br />
+  bitte bestätige deine Registrierung, indem du auf den folgenden Link klickst:<br />
+  <br />
+  <%= link_to 'Bestätigen', @confirmation_url %><br />
+</p>
