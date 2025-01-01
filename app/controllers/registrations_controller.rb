@@ -29,7 +29,7 @@ class RegistrationsController < ApplicationController
     if user
       user.update!(email_confirmation_token: nil)
       start_new_session_for user
-      redirect_to after_authentication_url, notice: "E-Mail-Adresse bestätigt. Herzlich willkommen!"
+      redirect_to Current.user, notice: "E-Mail-Adresse bestätigt. Herzlich willkommen!"
     else
       redirect_to new_session_url, alert: "Ungültiger Bestätigungslink."
     end
