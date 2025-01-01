@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :incoming_message_threads, class_name: "MessageThread", foreign_key: "recipient_id", dependent: :destroy
   has_many :outgoing_message_threads, class_name: "MessageThread", foreign_key: "creator_id", dependent: :destroy
   has_many :messages, foreign_key: "sender_id", dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_products, through: :favorites, source: :product
   has_one_attached :avatar do |attachable|
     attachable.variant :thumb, resize_to_fill: [ 100, 100 ]
   end

@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[ show edit update delete destroy ]
+  before_action :set_product, only: %i[ show edit update delete destroy add_to_favorites remove_from_favorites ]
   allow_unauthenticated_access only: %i[ show ]
 
   # GET /products/1
@@ -52,6 +52,22 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to user_path Current.user, status: :see_other, notice: "Produkt wurde erfolgreich gelöscht." }
+    end
+  end
+
+  def add_to_favorites
+    @product.favorites.create! user: Current.user
+
+    respond_to do |format|
+      format.html { redirect_to @product, notice: "Produkt wurde zu den Favoriten hinzugefügt." }
+    end
+  end
+
+  def remove_from_favorites
+    @product.favorites.find_by!(user: Current.user).destroy!
+
+    respond_to do |format|
+      format.html { redirect_to @product, notice: "Produkt wurde aus den Favoriten entfernt." }
     end
   end
 

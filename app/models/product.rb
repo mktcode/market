@@ -4,6 +4,8 @@ class Product < ApplicationRecord
   has_and_belongs_to_many :message_threads
   accepts_nested_attributes_for :materials, allow_destroy: true, reject_if: lambda { |attributes| attributes["name"].blank? }
   has_rich_text :body
+  has_many :favorites, dependent: :destroy
+  has_many :favorited_by_users, through: :favorites, source: :user
   has_many_attached :images do |attachable|
     attachable.variant :thumb, resize_to_fill: [ 350, 350 ]
     attachable.variant :big, resize_to_limit: [ 1000, 1000 ]
