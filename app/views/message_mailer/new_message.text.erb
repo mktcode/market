@@ -1,0 +1,12 @@
+Neue Nachricht
+==============
+
+Du hast eine neue Nachricht von <%= @message.sender.name %> erhalten:
+
+---
+<%= @message.content.truncate(50) %>
+---
+
+Antworten: <%= message_thread_url(@message_thread) %>
+
+(Antworte bitte nicht direkt auf diese E-Mail, sondern über die Plattform.)

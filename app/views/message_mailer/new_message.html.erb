@@ -1,0 +1,19 @@
+<h1>Neue Nachricht</h1>
+
+<p>
+  Du hast eine neue Nachricht von <%= @message.sender.name %> erhalten.
+</p>
+
+<%= image_tag @message.sender.avatar.variant(:thumb) %>
+
+<p>
+  <%= @message.content.truncate(50) %>
+</p>
+
+<%= link_to message_thread_url(@message_thread) do %>
+  Antworten
+<% end %>
+
+<p>
+  Antworte bitte nicht direkt auf diese E-Mail, sondern über die Plattform.
+</p>

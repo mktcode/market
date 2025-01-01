@@ -18,6 +18,9 @@ class MessageThreadsController < ApplicationController
     message_thread = MessageThread.create!(creator: Current.user, recipient: recipient)
     message_thread.messages.create!(sender: Current.user, content: params[:content])
     message_thread.products << product
+
+    MessageMailer.with(message_thread: message_thread).new_message.deliver_later
+
     redirect_to message_thread_path(message_thread)
   end
 end
