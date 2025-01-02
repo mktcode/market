@@ -22,6 +22,9 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
+        Current.user.followers.each do |follower|
+          ProductMailer.new_product(follower, @product).deliver_now
+        end
         format.html { redirect_to @product, notice: "Produkt wurde erfolgreich erstellt." }
       else
         format.html { render :new, status: :unprocessable_entity }
