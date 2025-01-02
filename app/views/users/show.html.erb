@@ -50,4 +50,40 @@
   </div>
 
   <%= render partial: 'products/grid', locals: { products: @user.products } %>
+
+  <% if Current.user == @user %>
+    <h2 class="text-3xl mb-3 mt-12">
+      Deine Follower
+    </h2>
+    <p class="text-xl text-gray-600 mb-6">
+      Diese Menschen werden automatisch per E-Mail benachatrichtigt, wenn du ein neues Produkt veröffentlichst.
+    </p>
+    <div class="flex gap-4">
+      <% @user.followers.each do |follower| %>
+        <%= link_to user_path(follower), :class => "flex flex-col items-center space-y-2" do %>
+          <%= image_tag follower.avatar.variant(:thumb), class: 'size-20 rounded-full' if follower.avatar.attached? %>
+          <span class="first-letter:uppercase">
+            <%= follower.name %>
+          </span>
+        <% end %>
+      <% end %>
+    </div>
+
+    <h2 class="text-3xl mb-3 mt-12">
+      Du folgst
+    </h2>
+    <p class="text-xl text-gray-600 mb-6">
+      Du wirst automatisch per E-Mail benachatrichtigt, wenn diese Menschen ein neues Produkt veröffentlichen.
+    </p>
+    <div class="flex gap-4">
+      <% @user.following.each do |following| %>
+        <%= link_to user_path(following), :class => "flex flex-col items-center space-y-2" do %>
+          <%= image_tag following.avatar.variant(:thumb), class: 'size-20 rounded-full' if following.avatar.attached? %>
+          <span class="first-letter:uppercase">
+            <%= following.name %>
+          </span>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>
