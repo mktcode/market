@@ -1,0 +1,7 @@
+<p>Hallo <%= @follower.name %>,</p>
+
+<p><%= @product.user.name %> hat ein neues Produkt erstellt: <%= @product.title %></p>
+
+<p>
+  Hier geht es zum Produkt: <%= link_to product_url(@product) %>
+</p>

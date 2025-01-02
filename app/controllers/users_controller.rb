@@ -1,32 +1,13 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :set_user, only: %i[ show edit update destroy follow unfollow ]
   allow_unauthenticated_access only: %i[ show ]
 
   # GET /users/name or name.emmaherbst.de
   def show
   end
 
-  # GET /users/new
-  def new
-    redirect_to root_url(host: Rails.application.config.main_host), alert: "Registrierung ist deaktiviert.", allow_other_host: true
-  end
-
   # GET /users/name/edit
   def edit
-  end
-
-  # POST /users
-  def create
-    raise ActionController::RoutingError, "Registrierung ist deaktiviert."
-    # @user = User.new(user_params)
-
-    # respond_to do |format|
-    #   if @user.save
-    #     format.html { redirect_to @user, notice: "Benutzer wurde erfolgreich erstellt." }
-    #   else
-    #     format.html { render :new, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # PATCH/PUT /users/1
@@ -47,6 +28,16 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to user_path, status: :see_other, notice: "Benutzer wurde erfolgreich gelöscht." }
     end
+  end
+
+  def follow
+    Current.user.following << @user unless Current.user.following.include?(@user)
+    redirect_to @user, notice: "Du bekommst jetzt eine E-Mail, wenn #{@user.name.capitalize} ein neues Produkt veröffentlicht."
+  end
+
+  def unfollow
+    Current.user.following.delete(@user)
+    redirect_to @user, notice: "Du bekommst jetzt keine E-Mails mehr, wenn #{@user.name.capitalize} ein neues Produkt veröffentlicht."
   end
 
   private

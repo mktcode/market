@@ -7,6 +7,13 @@ class User < ApplicationRecord
   has_many :messages, foreign_key: "sender_id", dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorite_products, through: :favorites, source: :product
+
+  has_many :follows, foreign_key: :follower_id
+  has_many :following, through: :follows, source: :user
+
+  has_many :reverse_follows, class_name: "Follow", foreign_key: :user_id
+  has_many :followers, through: :reverse_follows, source: :follower
+
   has_one_attached :avatar do |attachable|
     attachable.variant :thumb, resize_to_fill: [ 100, 100 ]
   end

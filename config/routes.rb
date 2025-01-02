@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   get "products/:id/delete", to: "products#delete", as: :delete_product
   post "products/:id/favorite", to: "products#add_to_favorites", as: :add_product_to_favorites
   post "products/:id/unfavorite", to: "products#remove_from_favorites", as: :remove_product_from_favorites
-  resources :users, param: :name
+  resources :users, param: :name, only: %i[ show edit update destroy ] do
+    member do
+      post "follow"
+      delete "unfollow"
+    end
+  end
 
   resources :registrations, only: %i[ new create ]
   get "registrations/confirm/:token", to: "registrations#confirm", as: :confirm_registration
