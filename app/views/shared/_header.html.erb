@@ -1,9 +1,10 @@
 <%= render partial: 'shared/messages' %>
-<% image ||= "header5.webp" %>
+<% random_image_number = rand(1..8) %>
+<% image ||= "header#{random_image_number}.webp" %>
 <% logo ||= "emma-herbst-logo.png" %>
 <% slogan ||= "Stabile Werte. Keine Kompromisse." %>
 <div
-  class="relative w-full h-[450px] sm:h-[500px] bg-cover bg-center overflow-hidden"
+  class="relative w-full h-[450px] sm:h-[500px] bg-cover bg-center overflow-hidden contrast-125 saturate-50"
   style="background-image: url('<%= asset_path(image) %>');"
 >
   <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center">
