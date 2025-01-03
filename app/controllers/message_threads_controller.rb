@@ -21,7 +21,17 @@ class MessageThreadsController < ApplicationController
 
     MessageMailer.with(message_thread: message_thread).new_message.deliver_later
 
-    redirect_to message_thread_path(message_thread)
+    redirect_to message_thread_path(message_thread), notice: "Nachricht wurde erfolgreich versendet."
+  end
+
+  def create_with_message
+    recipient = User.find(params[:recipient_id])
+    message_thread = MessageThread.create!(creator: Current.user, recipient: recipient)
+    message_thread.messages.create!(sender: Current.user, content: params[:content])
+
+    MessageMailer.with(message_thread: message_thread).new_message.deliver_later
+
+    redirect_to message_thread_path(message_thread), notice: "Nachricht wurde erfolgreich versendet."
   end
 
   def add_message
@@ -33,6 +43,6 @@ class MessageThreadsController < ApplicationController
 
     message_thread.messages.create!(sender: Current.user, content: params[:content], read_at: mark_as_read ? Time.zone.now : nil)
 
-    redirect_to message_thread_path(message_thread)
+    redirect_to message_thread_path(message_thread), notice: "Nachricht wurde erfolgreich versendet."
   end
 end
