@@ -1,77 +1,79 @@
 <%= render partial: 'shared/header' %>
 
-<div class="bg-white">
-  <div class="max-w-screen-lg mx-auto px-3 sm:px-4 pb-12 pt-24">
-    <h1 class="text-3xl sm:text-5xl mb-2 sm:mb-4">
-      Geld verdienen mit handgefertigten Produkten
-    </h1>
-    <p class="text-xl sm:text-3xl text-gray-600">
-      So klappt der Einstieg in Deutschland, Österreich und der Schweiz.
-    </p>
+<%= render layout: 'layouts/content' do %>
+  <div class="prose-lg max-w-none">
+    <h2>Rechtliche Hinweise für Anbieter und Nutzer unseres Marktplatzes</h2>
+
+    <p>Unser Marktplatz ist für alle gedacht, die gerne Produkte oder Dienstleistungen anbieten möchten, ohne dabei große Gewinne zu erzielen. Viele machen das aus Leidenschaft oder um anderen zu helfen. Damit das rechtlich in Ordnung bleibt, möchten wir die wichtigsten Punkte erklären.</p>
+
+    <hr>
+
+    <h3>1. Wann ist etwas "gewerblich"?</h3>
+
+    <p>In Deutschland ist eine Tätigkeit nur "gewerblich", wenn <strong>alle</strong> diese Dinge zutreffen:</p>
+    <ul class="list-disc list-outside">
+      <li><strong>Du arbeitest selbstständig</strong>, also ohne Anweisungen von anderen.</li>
+      <li><strong>Du machst das dauerhaft</strong>, also nicht nur einmal oder hin und wieder.</li>
+      <li><strong>Du willst damit Gewinn machen</strong>, also mehr verdienen, als du ausgegeben hast.</li>
+      <li><strong>Du bietest das öffentlich an</strong>, z. B. für viele Menschen, nicht nur Freunde oder Familie.</li>
+    </ul>
+
+    <p>Wenn auch nur <strong>eins dieser Kriterien nicht zutrifft</strong>, ist es keine gewerbliche Tätigkeit. Zum Beispiel: Wenn du nur ab und zu etwas machst und kein Geld daran verdienen willst, dann bist du nicht gewerblich unterwegs.</p>
+
+    <hr>
+
+    <h3>2. Was bedeutet "kostenbasiert" oder "gemeinnützig"?</h3>
+
+    <p>Unser Marktplatz ist perfekt für alle, die ihre Produkte oder Dienstleistungen <strong>auf Kostendeckungsbasis</strong> oder <strong>gemeinnützig</strong> anbieten möchten:</p>
+    <ul class="list-disc list-outside">
+      <li><strong>Kostenbasiert:</strong> Du berechnest nur, was dich das Material gekostet hat. Wenn mal ein kleiner Überschuss entsteht, z. B. weil jemand freiwillig etwas aufrundet, ist das kein Problem.</li>
+      <li><strong>Gemeinnützig:</strong> Du verschenkst deine Arbeit ganz oder teilweise und verzichtest auf Gewinn.</li>
+    </ul>
+
+    <p><strong>Beispiel:</strong> Stell dir vor, du bist Näherin und machst Schürzen. Die Materialien kosten dich 18,60 €, und jemand bezahlt dir freiwillig 20 €. Der Überschuss von 1,40 € ist okay, solange das nur ab und zu passiert und nicht dein Ziel ist, immer mehr zu verdienen.</p>
+
+    <hr>
+
+    <h3>3. Was sagt das Finanzamt dazu?</h3>
+
+    <p>Wenn du nur ab und zu etwas verkaufst und keinen Gewinn machen willst, fällt das oft unter "sonstige Einkünfte" (nach <strong>§ 22 Nr. 3 EStG</strong>). Hier sind die wichtigsten Regeln:</p>
+    <ul class="list-disc list-outside">
+      <li><strong>Bis 256 € pro Jahr steuerfrei:</strong> Solange deine Einnahmen minus Kosten unter 256 € liegen, musst du nichts versteuern.</li>
+      <li><strong>Keine Steuerpflicht:</strong> Wenn du unter dieser Grenze bleibst, brauchst du nichts beim Finanzamt anzugeben.</li>
+      <li><strong>Behalte den Überblick:</strong> Schreib auf, was du eingenommen und ausgegeben hast. Das hilft dir, wenn mal jemand nachfragt.</li>
+    </ul>
+
+    <p><strong>Beispiel:</strong> Wenn du bei jeder Schürze 1,40 € übrig hast, könntest du etwa 182 Schürzen "verkaufen", ohne die Steuerfreigrenze zu überschreiten. Aber Achtung: Wenn du das regelmäßig machst, könnte das Finanzamt sagen, dass du doch gewerblich bist.</p>
+
+    <hr>
+
+    <h3>4. Lebensmittel und Hygiene</h3>
+
+    <p>Wenn du Lebensmittel wie Kuchen oder Marmelade auf Anfrage herstellen möchtest, gelten besondere Regeln:</p>
+    <ul class="list-disc list-outside">
+      <li><strong>Keine gewerbliche Herstellung:</strong> Solange du das nur selten machst und keinen Gewinn willst, brauchst du meist keine Gewerbeanmeldung.</li>
+      <li><strong>Hygiene beachten:</strong> Halte deine Arbeitsflächen sauber und achte auf grundlegende Hygieneregeln.</li>
+      <li><strong>Informiere über Zutaten:</strong> Auch wenn du nicht gewerblich bist, ist es nett, Allergene oder wichtige Inhaltsstoffe freiwillig anzugeben.</li>
+    </ul>
+
+    <hr>
+
+    <h3>5. Tipps für Anbieter</h3>
+
+    <p>Damit du rechtlich auf der sicheren Seite bist, beachte diese Tipps:</p>
+    <ul class="list-disc list-outside">
+      <li><strong>Bleib gelegentlich:</strong> Biete deine Produkte oder Dienstleistungen nur hin und wieder an. Vermeide es, regelmäßig zu werben.</li>
+      <li><strong>Kostendeckung klar machen:</strong> Erkläre, dass du nur Materialkosten abdeckst, und kalkuliere keine Gewinne ein.</li>
+      <li><strong>Schreibe mit:</strong> Führe einfache Listen über Einnahmen und Ausgaben, damit alles nachvollziehbar bleibt.</li>
+      <li><strong>Keine Werbung wie ein Profi:</strong> Du brauchst kein Logo oder festen Shop, wenn du privat bleibst.</li>
+    </ul>
+
+    <hr>
+
+    <h3>Noch Fragen? Wir helfen!</h3>
+
+    <p>Wir wissen, dass rechtliche Dinge kompliziert sein können. Deshalb haben wir einen Steuerberater im Team, der dir gerne hilft! Wenn du dir unsicher bist, melde dich bei uns. Alternativ kannst du dich auch an das Finanzamt, Gewerbeamt oder eine Rechtsberatung wenden.</p>
+
+    <p>Wir wollen, dass du dich bei uns sicher fühlst und Spaß daran hast, anderen mit deinen Produkten oder Dienstleistungen eine Freude zu machen.</p>
   </div>
-
-  <div class="max-w-screen-lg mx-auto px-3 sm:px-4 pb-12 pt-12">
-    <div class="prose-lg">
-      <p>
-        Du liebst es, handgemachte Produkte herzustellen, und spielst mit dem Gedanken, diese zu verkaufen? Keine Sorge &ndash; das ist in Deutschland, Österreich und der Schweiz einfacher, als du vielleicht denkst. Hier erfährst du die wichtigsten Schritte, um offiziell mit dem Verkauf zu starten, ohne dass dir der Papierkram über den Kopf wächst.
-      </p>
-
-      <h3 class="text-lg font-semibold">
-        Brauche ich überhaupt ein Gewerbe?
-      </h3>
-      <p>
-        Nein! Zumindest nicht unbedingt. Wenn du nur selten deine handgemachten Produkte verkaufst und damit eher deine Kosten decken als Gewinne erzielen möchtest, gilt das oft als privater Verkauf. Erst wenn du regelmäßig und mit der Absicht, Gewinne zu machen, aktiv wirst, brauchst du ein Gewerbe. Aber auch das ist kein großer Aufwand und leicht zu erledigen.
-      </p>
-
-      <h3 class="text-lg font-semibold">Deutschland</h3>
-      <p><strong>1. Brauche ich einen Gewerbeschein?</strong><br>
-        Ja, in Deutschland brauchst du einen Gewerbeschein, wenn du deine Produkte regelmäßig und mit Gewinnerzielungsabsicht verkaufst. Aber keine Sorge, der Aufwand ist überschaubar: Den Gewerbeschein beantragst du bei deinem zuständigen Gewerbeamt. Die Gebühren liegen meist zwischen 20 und 50 Euro.
-      </p>
-      <p><strong>2. Muss ich mich bei der IHK anmelden?</strong><br>
-        Wenn du ein Gewerbe anmeldest, wirst du automatisch Mitglied bei der Industrie- und Handelskammer (IHK). Für kleine Nebentätigkeiten fallen oft keine oder nur sehr geringe Beiträge an. Solltest du keine hohen Umsätze erzielen, kannst du bei deiner IHK einen Antrag auf Beitragsbefreiung stellen.
-      </p>
-      <p><strong>3. Wie sieht es mit der Steuererklärung aus?</strong><br>
-        Deine Einnahmen musst du in der Steuererklärung angeben, auch wenn du nur nebenbei verkaufst. Bis zu einem Gewinn von 24.500 Euro im Jahr fällt keine Gewerbesteuer an. Zudem kannst du die Kleinunternehmerregelung nutzen, wenn dein Umsatz im ersten Jahr unter 22.000 Euro liegt. Das bedeutet: Du musst keine Umsatzsteuer ausweisen und sparst dir zusätzlichen Papierkram.
-      </p>
-      <p><strong>4. Brauche ich eine Buchhaltungssoftware?</strong><br>
-        Nein, bei geringen Umsätzen reicht oft eine einfache Excel-Tabelle oder sogar handschriftliche Aufzeichnungen. Wichtig ist nur, dass du deine Einnahmen und Ausgaben übersichtlich dokumentierst.
-      </p>
-
-      <h3 class="text-lg font-semibold">Österreich</h3>
-      <p><strong>1. Brauche ich einen Gewerbeschein?</strong><br>
-        Ja, in Österreich ist ein Gewerbeschein ebenfalls erforderlich, wenn du deine handgefertigten Produkte verkaufst. Du meldest dein Gewerbe bei der Bezirkshauptmannschaft oder beim Magistrat an. Die Kosten sind gering und der Prozess unkompliziert.
-      </p>
-      <p><strong>2. Muss ich mich bei der Wirtschaftskammer anmelden?</strong><br>
-        Mit der Gewerbeanmeldung wirst du automatisch Mitglied der Wirtschaftskammer (WKO). Als Kleinstunternehmer kannst du aber von reduzierten Beiträgen profitieren. Informiere dich bei deiner regionalen WKO, ob du eine Befreiung beantragen kannst.
-      </p>
-      <p><strong>3. Wie sieht es mit der Steuererklärung aus?</strong><br>
-        Auch in Österreich musst du deine Einnahmen versteuern. Als Kleinunternehmer kannst du dich von der Umsatzsteuer befreien lassen, wenn dein Jahresumsatz unter 35.000 Euro liegt. Das vereinfacht den Einstieg enorm.
-      </p>
-      <p><strong>4. Brauche ich eine Buchhaltungssoftware?</strong><br>
-        Nicht unbedingt. Für den Anfang genügen auch hier einfache Aufzeichnungen über Einnahmen und Ausgaben.
-      </p>
-
-      <h3 class="text-lg font-semibold">Schweiz</h3>
-      <p><strong>1. Brauche ich einen Gewerbeschein?</strong><br>
-        In der Schweiz gibt es keine Gewerbescheine wie in Deutschland oder Österreich. Wenn du gelegentlich handgefertigte Produkte verkaufst, kannst du das als sogenannte &quot;selbstständige Nebenerwerbstätigkeit&quot; anmelden. Dafür wendest du dich an deine kantonale Steuerverwaltung.
-      </p>
-      <p><strong>2. Muss ich mich irgendwo anmelden?</strong><br>
-        Wenn du mehr als 2.300 CHF pro Jahr verdienst, musst du dich bei der AHV (Alters- und Hinterlassenenversicherung) anmelden. Verdienst du weniger, reicht es, deine Einnahmen in der Steuererklärung anzugeben.
-      </p>
-      <p><strong>3. Wie sieht es mit der Steuererklärung aus?</strong><br>
-        Deine Einnahmen aus dem Verkauf trägst du in der Steuererklärung als Einkommen ein. Liegt dein Jahresumsatz unter 100.000 CHF, bist du von der Mehrwertsteuerpflicht befreit.
-      </p>
-      <p><strong>4. Brauche ich eine Buchhaltungssoftware?</strong><br>
-        Auch in der Schweiz genügt eine einfache Dokumentation deiner Einnahmen und Ausgaben, vor allem bei geringem Umsatz.
-      </p>
-
-      <h3 class="text-lg font-semibold">Fazit: Einfach starten, ohne Risiko</h3>
-      <p>
-        Der Einstieg in den Verkauf deiner handgefertigten Produkte ist in allen drei Ländern überschaubar. Die wichtigsten Behörden sind schnell kontaktiert, und mit der Kleinunternehmerregelung bleibt der Verwaltungsaufwand minimal. Du brauchst keine teure Buchhaltungssoftware oder komplexe Kenntnisse &ndash; einfache Aufzeichnungen genügen völlig.
-      </p>
-      <p>
-        Trau dich, deine Leidenschaft auszuprobieren! Es geht nicht darum, gleich ein großes Business aufzubauen, sondern mit Freude und ohne großes Risiko deine Produkte anzubieten. Schritt für Schritt lernst du, was funktioniert, und kannst dein Hobby ganz entspannt zum kleinen Nebenverdienst machen.
-      </p>
-    </div>
-  </div>
-</div>
+<% end %>
