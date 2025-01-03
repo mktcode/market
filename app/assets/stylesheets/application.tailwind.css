@@ -17,6 +17,13 @@
     @apply bg-gray-300/20 text-gray-800 shadow-none hover:bg-gray-300 focus:ring-0;
   }
 
+  button.secondary.shy,
+  .button.secondary.shy,
+  input[type="button"].secondary.shy,
+  input[type="submit"].secondary.shy {
+    @apply bg-white/20 text-white/80 shadow-none hover:bg-white/30 focus:ring-0 hover:text-white;
+  }
+
   button.danger,
   .button.danger,
   input[type="button"].danger,
