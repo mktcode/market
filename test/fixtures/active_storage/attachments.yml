@@ -63,6 +63,71 @@ product_four_image_attachment_2:
   record: four (Product)
   blob: four_image_blob_2
 
+product_five_image_attachment_1:
+  name: images
+  record: five (Product)
+  blob: one_image_blob_1
+
+product_five_image_attachment_2:
+  name: images
+  record: five (Product)
+  blob: one_image_blob_2
+
+product_five_image_attachment_3:
+  name: images
+  record: five (Product)
+  blob: one_image_blob_3
+
+product_six_image_attachment_1:
+  name: images
+  record: six (Product)
+  blob: two_image_blob_1
+
+product_six_image_attachment_2:
+  name: images
+  record: six (Product)
+  blob: two_image_blob_2
+
+product_six_image_attachment_3:
+  name: images
+  record: six (Product)
+  blob: two_image_blob_3
+
+product_six_image_attachment_4:
+  name: images
+  record: six (Product)
+  blob: two_image_blob_4
+
+product_seven_image_attachment_1:
+  name: images
+  record: seven (Product)
+  blob: three_image_blob_1
+
+product_seven_image_attachment_2:
+  name: images
+  record: seven (Product)
+  blob: three_image_blob_2
+
+product_seven_image_attachment_3:
+  name: images
+  record: seven (Product)
+  blob: three_image_blob_3
+
+product_seven_image_attachment_4:
+  name: images
+  record: seven (Product)
+  blob: three_image_blob_4
+
+product_eight_image_attachment_1:
+  name: images
+  record: eight (Product)
+  blob: four_image_blob_1
+
+product_eight_image_attachment_2:
+  name: images
+  record: eight (Product)
+  blob: four_image_blob_2
+
 user_one_avatar_attachment:
   name: avatar
   record: one (User)

@@ -25,3 +25,31 @@ four:
   time_invested: 3
   published: true
   user: one
+
+five:
+  title: Küchenschürze Blattwerk Plus
+  description: Variante der klassischen Blattwerk-Schürze mit zusätzlicher Tasche – nachhaltig und praktisch.
+  time_invested: 5.7
+  published: true
+  user: one
+
+six:
+  title: RustikalGriff Duo
+  description: Set aus zwei Upcycling-Topfhandschuhen aus Jutesack-Material – noch praktischer und genauso stilvoll.
+  time_invested: 4.2
+  published: true
+  user: one
+
+seven:
+  title: JuteLiebe Mini
+  description: Kompakter Obstkorb aus Upcycling-Materialien – perfekt für kleine Küchen oder Snacks.
+  time_invested: 3.9
+  published: true
+  user: two
+
+eight:
+  title: Retro-Halbschürze Blütenzauber
+  description: Farblich abgewandelte Version der VintageBlüte-Schürze – für individuelle Akzente in der Küche.
+  time_invested: 3.2
+  published: true
+  user: one
